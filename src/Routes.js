@@ -1,13 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Routes } from 'react-router-dom';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MyNavbar from './components/MyNavbar'
+import AdminContextProvider from './contexts/AdminContext';
+import AddPage from './pages/AddPage';
+import AdminPage from './pages/AdminPage';
 const MyRoutes = () => {
     return (
-        <BrowserRouter>
-            <Routes>
+        <AdminContextProvider>
+            <BrowserRouter>
+                <MyNavbar />
+                <Routes>
 
-            </Routes>
-        </BrowserRouter>
+                    <Route path='/admin' element={<AdminPage />} />
+                    <Route path='/admin/add' element={<AddPage />} />
+
+                </Routes>
+            </BrowserRouter>
+        </AdminContextProvider>
     );
 };
 
