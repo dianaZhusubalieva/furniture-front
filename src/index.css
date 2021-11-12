@@ -1,6 +1,5 @@
 body {
   margin: 0;
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,6 +15,7 @@ code {
   flex-direction: column;
   align-items: center;
 }
+
 .add-page form, .edit-page form {
   display: flex;
   flex-direction: column;
@@ -29,7 +29,6 @@ code {
 .add-page form button, .edit-page form button {
   margin-top: 15px;
   margin-bottom: 15px;
-
   padding: 0;
 }
 
@@ -73,12 +72,88 @@ code {
   margin: 10px;
 }
 
+.c1-img img:hover, .c1-img2 img:hover {
+  transform: scale(1.02, 1.02);
+  transition-duration: 1s;
+}
+
 .c1-text {
   position: absolute;
   top: 30%;
   width: 300px;
   left: 5%;
 }
+
+/* Content 2 */
+
+.content2 {
+  margin-top: 100px;
+}
+
+/* Content 3 */
+
+.content3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.c3-h1 {
+  text-align: center;
+}
+
+.content3 img {
+  width: 500px;
+  border-radius: 14px;
+  height: 200px;
+  object-fit: cover;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.content3 img:hover {
+  -webkit-transform: scale(.2);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+
+/* Content4 */
+
+.c4-img {
+  background-color: #dddbd6;
+  display: flex;
+  align-items: center;
+}
+
+.content4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content4 img {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.content4 img:hover {
+  -webkit-transform: scale(.2);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition-duration: 0.7s;
+}
+
+/* Footer */
+
+.footer-img {
+  background-color: rgb(24, 24, 24);
+  width: 100vw;
+}
+
+/* Adaptive */
 
 @media screen and (max-width: 1000px) {
   .content1 {
@@ -92,15 +167,24 @@ code {
   .c1-img, .c1-img2 {
     justify-content: center;
   }
+  .content3 {
+    justify-content: center;
+  }
 }
 
-/* Content 2 */
-
-.content2 {
-  margin-top: 100px;
+@media screen and (max-width: 620px) {
+  .content3 img {
+    width: 400px;
+    height: 180px;
+  }
 }
 
-/* Adaptive */
+@media screen and (max-width: 460px) {
+  .content3 img {
+    width: 300px;
+    height: 180px;
+  }
+}
 
 @media screen and (max-width: 370px) {
   .c1-text {
@@ -110,5 +194,8 @@ code {
     width: 240px;
     height: 190px;
   }
-
+  .content3 img {
+    width: 200px;
+    height: 180px;
+  }
 }
