@@ -5,11 +5,16 @@ import { API } from "../helpers/const";
 export const adminContext = React.createContext();
 const INIT_STATE = {
   products: null,
+  productToEdit: null,
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case "GET_PRODUCTS":
       return { ...state, products: action.payload };
+
+    case "GET_PRODUCT_TO_EDIT":
+      return { ...state, productToEdit: action.payload };
+
     default:
       return state;
   }
@@ -58,6 +63,18 @@ const AdminContextProvider = (props) => {
     }
   };
 
+  const saveEditedProduct = async (editedProduct) => {
+    try {
+      const response = await axios.patch(
+        `${API}/${editedProduct.id}`,
+        editedProduct
+      );
+      getProducts();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   //! DELETE
   const deleteProduct = async (id) => {
     try {
@@ -75,7 +92,10 @@ const AdminContextProvider = (props) => {
         getProducts: getProducts,
         products: state.products,
         getProductToEdit: getProductToEdit,
+
         deleteProduct: deleteProduct,
+        saveEditedProduct: saveEditedProduct,
+        productToEdit: state.productToEdit,
       }}
     >
       {props.children}
