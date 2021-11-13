@@ -5,6 +5,7 @@ import MyContent2 from '../components/MainPageContent/MyContent2';
 import MyFooter from '../components/MainPageContent/MyFooter';
 import MyContent3 from '../components/MainPageContent/MyContent3';
 import MyContent4 from '../components/MainPageContent/MyContent4';
+
 import MainPageNavbar from '../components/MainPageContent/MainPageNavbar';
 
 
