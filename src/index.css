@@ -35,7 +35,7 @@ code {
 /* Navbar */
 
 .css-11b3ww9-MuiPaper-root-MuiAppBar-root {
-  background-color: unset !important;
+  background-color: rgba(12, 12, 12, 0.884) !important;
   /* box-shadow */
 }
 
@@ -137,6 +137,7 @@ code {
 .content4 img {
   padding-top: 50px;
   padding-bottom: 50px;
+  cursor: pointer
 }
 
 .content4 img:hover {
