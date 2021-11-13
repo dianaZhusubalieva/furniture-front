@@ -37,7 +37,8 @@ const AdminContextProvider = (props) => {
   //! READ. get from json
   const getProducts = async () => {
     try {
-      const response = await axios(API);
+      let filter = window.location.search;
+      const response = await axios(`${API}${filter}`);
       let action = {
         type: "GET_PRODUCTS",
         payload: response.data,

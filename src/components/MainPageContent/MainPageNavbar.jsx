@@ -10,14 +10,10 @@ import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { clientContext } from '../contexts/ClientContext';
-import { useNavigate } from 'react-router';
-import { adminContext } from '../contexts/AdminContext';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -156,19 +152,7 @@ export default function PrimarySearchAppBar() {
             </MenuItem>
         </Menu>
     );
-    //    ! поиск
-    const { getProducts } = React.useContext(adminContext)
-    const getProductsClient = React.useContext(clientContext)
 
-    const navigate = useNavigate()
-    let obj = new URLSearchParams(window.location.search)
-    const filterPhones = (key, value) => {
-        obj.set(key, value)
-        let newUrl = `${window.location.pathname}?${obj.toString()}`
-        navigate(newUrl)
-        getProducts()
-        getProductsClient.getProducts()
-    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -191,18 +175,7 @@ export default function PrimarySearchAppBar() {
                     >
                         MUI
                     </Typography>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            onChange={(e) => {
-                                filterPhones(`q`, e.target.value)
-                            }}
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
+
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
