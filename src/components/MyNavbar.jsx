@@ -1,26 +1,24 @@
-
-import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import { clientContext } from '../contexts/ClientContext';
-import { useNavigate, Link } from 'react-router-dom';
-import { adminContext } from '../contexts/AdminContext';
-import { ShoppingCart } from '@mui/icons-material';
-
+import * as React from "react";
+import { styled, alpha } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import InputBase from "@mui/material/InputBase";
+import Badge from "@mui/material/Badge";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import MailIcon from "@mui/icons-material/Mail";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import MoreIcon from "@mui/icons-material/MoreVert";
+import { clientContext } from "../contexts/ClientContext";
+import { useNavigate, Link } from "react-router-dom";
+import { adminContext } from "../contexts/AdminContext";
+import { ShoppingCart } from "@mui/icons-material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -64,20 +62,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   //    ! поиск
-  const { getProducts } = React.useContext(adminContext)
-  const getProductsClient = React.useContext(clientContext)
 
-  const navigate = useNavigate()
-  let obj = new URLSearchParams(window.location.search)
+  const { getProducts } = React.useContext(adminContext);
+  const getProductsClient = React.useContext(clientContext);
+
+  const navigate = useNavigate();
+  let obj = new URLSearchParams(window.location.search);
   const filterPhones = (key, value) => {
-    obj.set(key, value)
-    let newUrl = `${window.location.pathname}?${obj.toString()}`
-    navigate(newUrl)
-    getProducts()
-    getProductsClient.getProducts()
-  }
+    obj.set(key, value);
+    let newUrl = `${window.location.pathname}?${obj.toString()}`;
+    navigate(newUrl);
+    getProducts();
+    getProductsClient.getProducts();
+  };
   // ! cart
-  const { productsCountInCart } = React.useContext(clientContext)
+  const { productsCountInCart } = React.useContext(clientContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -143,8 +142,12 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Link to='/cart' >
-            <Badge style={{ color: 'black' }} badgeContent={productsCountInCart} color="error">
+          <Link to="/cart">
+            <Badge
+              style={{ color: "black" }}
+              badgeContent={productsCountInCart}
+              color="error"
+            >
               <ShoppingCart />
             </Badge>
           </Link>
@@ -192,15 +195,14 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { xs: "none", sm: "block" } }}
             onClick={() => {
-              navigate('/')
-            }
-            }
+              navigate("/");
+            }}
           >
             MUI
           </Typography>
@@ -210,17 +212,26 @@ export default function PrimarySearchAppBar() {
             </SearchIconWrapper>
             <StyledInputBase
               onChange={(e) => {
-                filterPhones(`q`, e.target.value)
+                filterPhones(`q`, e.target.value);
               }}
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Link to='/cart' >
-                <Badge style={{ color: 'white' }} badgeContent={productsCountInCart} color="error">
+
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <IconButton
+              size="large"
+              aria-label="show 4 new mails"
+              color="inherit"
+            >
+              <Link to="/cart">
+                <Badge
+                  style={{ color: "white" }}
+                  badgeContent={productsCountInCart}
+                  color="error"
+                >
                   <ShoppingCart />
                 </Badge>
               </Link>
@@ -246,7 +257,7 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -265,4 +276,3 @@ export default function PrimarySearchAppBar() {
     </Box>
   );
 }
-

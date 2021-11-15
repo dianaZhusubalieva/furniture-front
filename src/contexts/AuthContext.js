@@ -3,6 +3,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { authh } from "../utils/InitFirebase";
 
@@ -10,6 +14,9 @@ const AuthContext = createContext({
   currentUser: null,
   register: () => Promise,
   login: () => Promise,
+  logout: () => Promise,
+  signInWithGoogle: () => Promise,
+  forgotPassword: () => Promise,
 });
 //! NAVBAR чтобы показать вошел или нет пользователь(если да то отобр имейла)
 //  const {currentUser} = useAuth()
@@ -18,6 +25,7 @@ export const useAuth = () => useContext(AuthContext);
 
 export default function AuthContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
+  console.log(currentUser);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(authh, (user) => {
@@ -38,8 +46,29 @@ export default function AuthContextProvider({ children }) {
   function login(email, password) {
     return signInWithEmailAndPassword(authh, email, password);
   }
+  function logout() {
+    return signOut(authh);
+  }
 
-  const value = { currentUser, register, login };
+  function signInWithGoogle() {
+    const googleProvider = new GoogleAuthProvider();
+    return signInWithPopup(authh, googleProvider);
+  }
+
+  function forgotPassword(email) {
+    return sendPasswordResetEmail(authh, email, {
+      url: "http://localhost:3002/login",
+    });
+  }
+
+  const value = {
+    currentUser,
+    register,
+    login,
+    logout,
+    signInWithGoogle,
+    forgotPassword,
+  };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

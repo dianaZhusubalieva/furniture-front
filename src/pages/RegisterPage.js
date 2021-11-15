@@ -2,11 +2,13 @@ import "./diana.css";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import React from "react";
+import GoogleIcon from "@mui/icons-material/Google";
 
 import { useAuth } from "../contexts/AuthContext";
 import "toastify-js/src/toastify.css";
 import Toastify from "toastify-js";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 export default function Registerpage() {
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ export default function Registerpage() {
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { register } = useAuth();
+  const { register, signInWithGoogle } = useAuth();
 
   return (
     <>
@@ -89,6 +91,7 @@ export default function Registerpage() {
                 // required
               />
             </div>
+
             <div class="forgot-pass">
               <a href="#">Forgot Password?</a>
             </div>
@@ -96,6 +99,29 @@ export default function Registerpage() {
               <div class="inner"></div>
               <button type="submit">sign up</button>
             </div>
+            {/* google sign in  */}
+            <div class="btn">
+              <div class="inner"></div>
+              <button
+                onClick={() =>
+                  signInWithGoogle()
+                    .then((user) => {
+                      console.log(user);
+                    })
+                    .catch((e) => console.log(e.message))
+                }
+              >
+                <img
+                  width="20px"
+                  height="20px"
+                  class="google-icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                  alt=""
+                />
+                <span className="span1">sign in with Google</span>
+              </button>
+            </div>
+
             <div class="signup-link">
               already a member? <Link to="/login">login</Link>
             </div>

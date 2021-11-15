@@ -79,7 +79,9 @@ export default function Registerpage() {
               />
             </div>
             <div class="forgot-pass">
-              <a href="#">Forgot Password?</a>
+              <Link to="/forgot">
+                <a href="#">Forgot Password?</a>
+              </Link>
             </div>
             <div class="btn">
               <div class="inner"></div>
