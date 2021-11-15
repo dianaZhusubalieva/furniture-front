@@ -14,7 +14,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
+import { ShoppingCart } from '@mui/icons-material';
+import { clientContext } from '../contexts/ClientContext';
+import { Link } from 'react-router-dom';
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -56,6 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+
+    // ! cart
+    const { productsCountInCart } = React.useContext(clientContext)
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -120,11 +126,13 @@ export default function PrimarySearchAppBar() {
         >
             <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                        <MailIcon />
-                    </Badge>
+                    <Link to='/cart' >
+                        <Badge style={{ color: 'black' }} badgeContent={productsCountInCart} color="error">
+                            <ShoppingCart />
+                        </Badge>
+                    </Link>
                 </IconButton>
-                <p>Messages</p>
+                <p>Корзина</p>
             </MenuItem>
             <MenuItem>
                 <IconButton
@@ -153,7 +161,6 @@ export default function PrimarySearchAppBar() {
         </Menu>
     );
 
-
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="fixed">
@@ -179,9 +186,11 @@ export default function PrimarySearchAppBar() {
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
+                            <Link to='/cart' >
+                                <Badge style={{ color: 'white' }} badgeContent={productsCountInCart} color="error">
+                                    <ShoppingCart />
+                                </Badge>
+                            </Link>
                         </IconButton>
                         <IconButton
                             size="large"

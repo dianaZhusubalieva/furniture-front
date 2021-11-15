@@ -2,9 +2,12 @@ import React from 'react';
 import { Button, Card, CardActions, CardContent, CardMedia, Tooltip, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import '../UserContent/Bayel.css'
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { clientContext } from '../../contexts/ClientContext';
 
 const UserCards = ({ item }) => {
+    const { addAndDeleteProductInCart, checkProductInCart } = React.useContext(clientContext)
+
     return (
 
         <Card className='grid-content-card' sx={{ maxWidth: 300 }}>
@@ -24,7 +27,13 @@ const UserCards = ({ item }) => {
 
             </CardContent>
             <CardActions>
-                <Button className='shop-btn' color='success' variant='outlined' size="large"><AddShoppingCartIcon /></Button>
+
+                <Button
+                    onClick={() => addAndDeleteProductInCart(item)}
+                    className='shop-btn' color={checkProductInCart(item.id) ? 'error' : 'success'} variant='outlined' size="large">
+                    <ShoppingCartIcon color={checkProductInCart(item.id) ? 'error' : ''} />
+                </Button>
+
                 <Link to={`/product/${item.id}`} >
                     <Button variant="outlined" className='card-btn'>Подробнее</Button>
                 </Link>
