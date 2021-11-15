@@ -48,9 +48,6 @@ const AddPage = () => {
   const { addProduct } = React.useContext(adminContext);
 
   const navigate = useNavigate();
-  //   const handleSubmit = (product) => {
-  //     // console.log(product);
-  //   };
 
   return (
     <>

@@ -8,8 +8,10 @@ export const clientContext = React.createContext();
 const INIT_STATE = {
   products: null,
   detailProduct: null,
-  // productsCountInCart: JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : 0,
-  cart: null
+  productsCountInCart: JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : 0,
+  cart: null,
+  productsCountInFavorites: JSON.parse(localStorage.getItem('favorite')) ? JSON.parse(localStorage.getItem('favorite')) : 0,
+  favorites: null
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
@@ -21,6 +23,10 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, productsCountInCart: action.payload }
     case "GET_CART":
       return { ...state, cart: action.payload }
+    case 'ADD_AND_DELETE_FAVORITES':
+      return { ...state, productsCountInFavorites: action.payload }
+    case "GET_FAVORITES":
+      return { ...state, favorites: action.payload }
     default:
       return state;
   }
@@ -114,7 +120,7 @@ const ClientContextProvider = (props) => {
     let cart = JSON.parse(localStorage.getItem('cart'))
     if (!cart) {
       cart = {
-        product: [],
+        products: [],
         totalPrice: 0
       }
     }
@@ -159,6 +165,59 @@ const ClientContextProvider = (props) => {
     getCart()
   }
 
+  // ! favorites
+  const addAndDeleteProductInFavorites = (item) => {
+    let favorite = JSON.parse(localStorage.getItem('favorite'))
+    if (!favorite) {
+      favorite = {
+        favorites: []
+      }
+    }
+    let favProduct = {
+      item: item
+    }
+    let checkArr = favorite.favorites.filter((elem) => {
+      return elem.item.id === item.id
+    })
+    if (checkArr.length === 0) {
+      favorite.favorites.push(favProduct)
+    }
+    else {
+      favorite.favorites = favorite.favorites.filter((elem) => {
+        return elem.item.id !== item.id
+      })
+    }
+    localStorage.setItem('favorite', JSON.stringify(favorite))
+    dispatch({
+      type: 'ADD_AND_DELETE_FAVORITES',
+      payload: favorite.favorites.length
+    })
+  }
+  const checkFavoriteInFavorites = (id) => {
+    let favorite = JSON.parse(localStorage.getItem('favorite'))
+    if (!favorite) {
+      favorite = {
+        favorites: []
+      }
+    }
+    let checkArr = favorite.favorites.filter((elem) => {
+      return elem.item.id === id
+    })
+    if (checkArr.length === 0) {
+      return false
+    }
+    else {
+      return true
+    }
+  }
+  const getFavorite = () => {
+    let favorite = JSON.parse(localStorage.getItem('favorite'))
+    dispatch({
+      type: "GET_FAVORITES",
+      payload: favorite
+    })
+  }
+
   return (
     <clientContext.Provider
       value={{
@@ -169,6 +228,9 @@ const ClientContextProvider = (props) => {
         checkProductInCart,
         changeCountProduct,
         getCart,
+        addAndDeleteProductInFavorites,
+        checkFavoriteInFavorites,
+        getFavorite,
         totalPosts: totalPosts,
         currentPosts: currentPosts,
         postsPerPage: postsPerPage,
@@ -176,7 +238,9 @@ const ClientContextProvider = (props) => {
         products: state.products,
         detailProduct: state.detailProduct,
         productsCountInCart: state.productsCountInCart,
-        cart: state.cart
+        cart: state.cart,
+        productsCountInFavorites: state.productsCountInFavorites,
+        favorites: state.favorites
       }}
     >
       {props.children}
