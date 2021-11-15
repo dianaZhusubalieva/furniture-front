@@ -10,15 +10,13 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { clientContext } from "../contexts/ClientContext";
-import { useNavigate, Link } from "react-router-dom";
-import { adminContext } from "../contexts/AdminContext";
-import { ShoppingCart } from "@mui/icons-material";
+import { useAuth } from "../../contexts/AuthContext";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -61,21 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
-  //    ! поиск
-  const { getProducts } = React.useContext(adminContext);
-  const getProductsClient = React.useContext(clientContext);
-
-  const navigate = useNavigate();
-  let obj = new URLSearchParams(window.location.search);
-  const filterPhones = (key, value) => {
-    obj.set(key, value);
-    let newUrl = `${window.location.pathname}?${obj.toString()}`;
-    navigate(newUrl);
-    getProducts();
-    getProductsClient.getProducts();
-  };
-  // ! cart
-  const { productsCountInCart } = React.useContext(clientContext);
+  const { currentUser, logout } = useAuth();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -141,17 +125,11 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Link to="/cart">
-            <Badge
-              style={{ color: "black" }}
-              badgeContent={productsCountInCart}
-              color="error"
-            >
-              <ShoppingCart />
-            </Badge>
-          </Link>
+          <Badge badgeContent={4} color="error">
+            <MailIcon />
+          </Badge>
         </IconButton>
-        <p>Корзина</p>
+        <p>Messages</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -193,46 +171,18 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            style={{ cursor: "pointer" }}
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            MUI
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              onChange={(e) => {
-                filterPhones(`q`, e.target.value);
-              }}
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
           <Box sx={{ flexGrow: 1 }} />
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <Link to="/cart">
-                <Badge
-                  style={{ color: "white" }}
-                  badgeContent={productsCountInCart}
-                  color="error"
-                >
-                  <ShoppingCart />
-                </Badge>
-              </Link>
+              <Badge badgeContent={4} color="error">
+                <MailIcon />
+              </Badge>
             </IconButton>
             <IconButton
               size="large"
@@ -243,7 +193,8 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
+
+            {/* <IconButton
               size="large"
               edge="end"
               aria-label="account of current user"
@@ -253,7 +204,23 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
+            </IconButton> */}
+
+            {currentUser ? (
+              <>
+                <h6 className="text3">{currentUser.email}</h6>
+
+                <button class="button-64" role="button" onClick={logout}>
+                  <span class="text1">logout</span>
+                </button>
+              </>
+            ) : (
+              <Link to="/register">
+                <button class="button-64" role="button">
+                  <span class="text1">sign up</span>
+                </button>
+              </Link>
+            )}
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton

@@ -22,9 +22,6 @@
     /* background-color: rgb(71, 22, 22) red; */
 }
 
-
-
-
 .show-btn, .containerDi {
     position: absolute;
     top: 50%;
@@ -32,9 +29,7 @@
     transform: translate(-50%, -50%);
 }
 
-
 .containerDi {
-   
     background: rgb(239, 232, 255);
     width: 410px;
     padding: 30px;
@@ -107,7 +102,7 @@ form .forgot-pass a:hover {
 }
 
 form .btn {
-    margin: 30px 0;
+    margin: 15px 0;
     height: 45px;
     width: 100%;
     position: relative;
@@ -144,6 +139,7 @@ form .btn button {
 
 form .signup-link {
     text-align: center;
+    margin-top: 10px;
 }
 
 form .signup-link a {
@@ -153,4 +149,80 @@ form .signup-link a {
 
 form .signup-link a:hover {
     text-decoration: underline;
+}
+
+/* signin btn */
+
+/* CSS */
+
+.button-64 {
+    align-items: center;
+    background-image: linear-gradient(144deg, #00000086, #110303d7 50%, #3d0d0df6);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    /* max-width: 100%; */
+    min-width: 30px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-64:active, .button-64:hover {
+    outline: 0;
+}
+
+.button-64 span {
+    background-color: rgba(0, 0, 0, 0.371);
+    padding: 9px 17px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-64:hover span {
+    background: none;
+}
+
+@media (min-width: 768px) {
+    .button-64 {
+        font-size: 13px;
+        min-width: 20px;
+    }
+}
+
+.text3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffffcc
+}
+
+.span1 {
+    font-size: 14px;
+    padding-left: 7px;
+    margin-bottom: 10px;
+}
+
+.forgot-pass {
+    padding-top: 10px;
+}
+
+.google {
+    margin-bottom: 10px;
+}
+.or{
+    font-size: 19px;
+    color: rgba(56, 56, 56, 0.857);
+    padding-left: 194px;
 }
