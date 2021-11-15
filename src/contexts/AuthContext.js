@@ -25,8 +25,8 @@ export const useAuth = () => useContext(AuthContext);
 
 export default function AuthContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
-  console.log(currentUser);
-
+  currentUser ? console.log(currentUser.email) : console.log("odfk");
+  let adminEmail = "dinazhusubalieva@gmail.com";
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(authh, (user) => {
       setCurrentUser(user);
@@ -63,6 +63,7 @@ export default function AuthContextProvider({ children }) {
 
   const value = {
     currentUser,
+    adminEmail,
     register,
     login,
     logout,

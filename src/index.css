@@ -35,7 +35,7 @@ code {
 /* Navbar */
 
 .css-11b3ww9-MuiPaper-root-MuiAppBar-root {
-  background-color: rgba(0, 0, 0, 0.795) !important;
+  background-color: rgba(247, 247, 238, 0.645) !important;
   /* box-shadow */
 }
 
@@ -202,6 +202,7 @@ code {
 @media screen and (max-width: 370px) {
   .c1-text {
     width: unset;
+   
   }
   .c1-img img, .c1-img2 img {
     width: 240px;
