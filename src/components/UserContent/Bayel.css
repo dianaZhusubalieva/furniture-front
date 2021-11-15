@@ -60,8 +60,11 @@
 }
 
 .shop-btn {
-    margin-right: 30px !important;
     height: 36.6px !important;
+}
+
+.css-1t6e9jv-MuiCardActions-root>:not(:first-of-type) {
+    margin-left: 0 !important;
 }
 
 /* detail page */
@@ -197,6 +200,12 @@
 .cur-page-btn {
     background-color: #4CAF50 !important;
     color: white;
+}
+
+/*  Cart Page */
+
+.cart-page {
+    margin-top: 100px;
 }
 
 /* transition */

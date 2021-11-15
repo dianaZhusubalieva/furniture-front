@@ -12,7 +12,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 const DetailPage = () => {
-    const { getDetails, detailProduct, addAndDeleteProductInCart, checkProductInCart } = useContext(clientContext)
+    const { getDetails, detailProduct, addAndDeleteProductInCart, checkProductInCart, addAndDeleteProductInFavorites, checkFavoriteInFavorites } = useContext(clientContext)
     const params = useParams()
     useEffect(() => {
         getDetails(params.id)
@@ -97,6 +97,28 @@ const DetailPage = () => {
                                             }}
                                             className='shop-btn' color='success' variant='outlined' size="large">
                                             Добавить в корзину
+                                        </Button>
+                                    )
+                                }
+                                {
+                                    checkFavoriteInFavorites(detailProduct.id) ? (
+                                        <Button
+                                            onClick={() => {
+                                                addAndDeleteProductInFavorites(detailProduct)
+
+                                            }}
+                                            className='shop-btn' color='error' variant='outlined' size="large">
+                                            Удалить из избранных
+                                        </Button>
+
+                                    ) : (
+                                        <Button
+                                            onClick={() => {
+                                                addAndDeleteProductInFavorites(detailProduct)
+
+                                            }}
+                                            className='shop-btn' color='success' variant='outlined' size="large">
+                                            Добавить в избранное
                                         </Button>
                                     )
                                 }
