@@ -4,8 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registerpage from "../src/pages/RegisterPage";
 import LoginPage from "../src/pages/LoginPage.jsx";
 
-import MyNavbar from "./components/MyNavbar";
-
 import AdminContextProvider from "./contexts/AdminContext";
 import AuthContextProvider from "./contexts/AuthContext";
 import ClientContextProvider from "./contexts/ClientContext";
@@ -15,7 +13,9 @@ import AllProducts from "./pages/AllProducts";
 import DetailPage from "./pages/DetailPage";
 import EditPage from "./pages/EditPage";
 import MainPage from "./pages/MainPage";
+
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import CartPage from "./pages/CartPage";
 const MyRoutes = () => {
   return (
     <AuthContextProvider>
@@ -32,6 +32,8 @@ const MyRoutes = () => {
               <Route path="/register" element={<Registerpage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/forgot" element={<ForgotPasswordPage />} />
+
+              <Route path="/cart" element={<CartPage />} />
             </Routes>
           </BrowserRouter>
         </ClientContextProvider>

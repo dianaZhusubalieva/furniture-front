@@ -14,10 +14,10 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { useAuth } from "../../contexts/AuthContext";
-import { Button } from "@mui/material";
+import { ShoppingCart } from "@mui/icons-material";
+import { clientContext } from "../contexts/ClientContext";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../contexts/AuthContext";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -60,6 +60,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   const { currentUser, logout } = useAuth();
+
+  // ! cart
+  const { productsCountInCart } = React.useContext(clientContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -125,11 +128,17 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
+          <Link to="/cart">
+            <Badge
+              style={{ color: "black" }}
+              badgeContent={productsCountInCart}
+              color="error"
+            >
+              <ShoppingCart />
+            </Badge>
+          </Link>
         </IconButton>
-        <p>Messages</p>
+        <p>Корзина</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -171,18 +180,31 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
+            MUI
+          </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
-
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
+              <Link to="/cart">
+                <Badge
+                  style={{ color: "white" }}
+                  badgeContent={productsCountInCart}
+                  color="error"
+                >
+                  <ShoppingCart />
+                </Badge>
+              </Link>
             </IconButton>
             <IconButton
               size="large"
@@ -193,19 +215,6 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-
-            {/* <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton> */}
-
             {currentUser ? (
               <>
                 <h6 className="text3">{currentUser.email}</h6>
@@ -241,3 +250,5 @@ export default function PrimarySearchAppBar() {
     </Box>
   );
 }
+
+//after account circle in the Box

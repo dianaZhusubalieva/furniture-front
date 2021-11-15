@@ -62,6 +62,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   //    ! поиск
+
   const { getProducts } = React.useContext(adminContext);
   const getProductsClient = React.useContext(clientContext);
 
@@ -218,6 +219,7 @@ export default function PrimarySearchAppBar() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
