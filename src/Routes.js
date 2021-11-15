@@ -15,28 +15,30 @@ import AllProducts from "./pages/AllProducts";
 import DetailPage from "./pages/DetailPage";
 import EditPage from "./pages/EditPage";
 import MainPage from "./pages/MainPage";
+import CartPage from "./pages/CartPage";
 const MyRoutes = () => {
   return (
 
     <AuthContextProvider>
-    <AdminContextProvider>
-      <ClientContextProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="/admin/add" element={<AddPage />} />
-            <Route path="/" element={<MainPage />} />
-            <Route path="/admin/edit/:id" element={<EditPage />} />
-               <Route path="/register" element={<Registerpage />} />
+      <AdminContextProvider>
+        <ClientContextProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/admin" element={<AdminPage />} />
+              <Route path="/admin/add" element={<AddPage />} />
+              <Route path="/" element={<MainPage />} />
+              <Route path="/admin/edit/:id" element={<EditPage />} />
+              <Route path="/register" element={<Registerpage />} />
               <Route path="/login" element={<LoginPage />} />
-            <Route path="/products" element={<AllProducts />} />
-            <Route path="/product/:id" element={<DetailPage />} />
+              <Route path="/products" element={<AllProducts />} />
+              <Route path="/product/:id" element={<DetailPage />} />
+              <Route path="/cart" element={<CartPage />} />
 
-          </Routes>
-        </BrowserRouter>
-      </ClientContextProvider>
-    </AdminContextProvider>
- </AuthContextProvider>
+            </Routes>
+          </BrowserRouter>
+        </ClientContextProvider>
+      </AdminContextProvider>
+    </AuthContextProvider>
 
   );
 };
