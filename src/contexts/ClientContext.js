@@ -1,32 +1,34 @@
 import React from "react";
 import axios from "axios";
 import { API } from "../helpers/const";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import { CalcSubPrice, calcTotalPrice } from "../helpers/CalcPrice";
 export const clientContext = React.createContext();
 
 const INIT_STATE = {
   products: null,
   detailProduct: null,
+
   productsCountInCart: JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')).products.length : 0,
   cart: null,
   productsCountInFavorites: JSON.parse(localStorage.getItem('favorite')) ? JSON.parse(localStorage.getItem('favorite')).favorites.length : 0,
   favorites: null
+
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case "GET_PRODUCTS":
-      return { ...state, products: action.payload }
+      return { ...state, products: action.payload };
     case "GET_DETAILS":
-      return { ...state, detailProduct: action.payload }
-    case 'ADD_AND_DELETE_CART':
-      return { ...state, productsCountInCart: action.payload }
+      return { ...state, detailProduct: action.payload };
+    case "ADD_AND_DELETE_CART":
+      return { ...state, productsCountInCart: action.payload };
     case "GET_CART":
-      return { ...state, cart: action.payload }
-    case 'ADD_AND_DELETE_FAVORITES':
-      return { ...state, productsCountInFavorites: action.payload }
+      return { ...state, cart: action.payload };
+    case "ADD_AND_DELETE_FAVORITES":
+      return { ...state, productsCountInFavorites: action.payload };
     case "GET_FAVORITES":
-      return { ...state, favorites: action.payload }
+      return { ...state, favorites: action.payload };
     default:
       return state;
   }
@@ -42,7 +44,7 @@ const ClientContextProvider = (props) => {
         type: "GET_PRODUCTS",
         payload: response.data,
       });
-      resetCurrPage()
+      resetCurrPage();
     } catch (e) {
       console.log(e);
     }
@@ -61,162 +63,158 @@ const ClientContextProvider = (props) => {
     }
   };
   // ! пагинация
-  const [posts, setPosts] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(6)
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(6);
   useEffect(() => {
     if (state.products) {
-      const data = state.products
+      const data = state.products;
       setPosts(data);
     }
-  }, [state.products])
+  }, [state.products]);
 
-  const numberOfLastPost = currentPage * postsPerPage
-  const numberOfFirstPost = numberOfLastPost - postsPerPage
-  const currentPosts = posts.slice(numberOfFirstPost, numberOfLastPost)
-  const totalPosts = posts.length
+  const numberOfLastPost = currentPage * postsPerPage;
+  const numberOfFirstPost = numberOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(numberOfFirstPost, numberOfLastPost);
+  const totalPosts = posts.length;
 
   const handlePage = (newPage) => {
-    setCurrentPage(newPage)
-  }
+    setCurrentPage(newPage);
+  };
   function resetCurrPage() {
-    setCurrentPage(1)
+    setCurrentPage(1);
   }
 
   // ! cart
   const addAndDeleteProductInCart = (product1) => {
-    let cart = JSON.parse(localStorage.getItem('cart'))
+    let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
       cart = {
         products: [],
-        totalPrice: 0
-      }
+        totalPrice: 0,
+      };
     }
     let product = {
       product1: product1,
       count: 1,
-      subPrice: 0
-    }
-    product.subPrice = CalcSubPrice(product)
+      subPrice: 0,
+    };
+    product.subPrice = CalcSubPrice(product);
     let checkArr = cart.products.filter((item) => {
-      return item.product1.id === product1.id
-    })
+      return item.product1.id === product1.id;
+    });
     if (checkArr.length === 0) {
-      cart.products.push(product)
-    }
-    else {
+      cart.products.push(product);
+    } else {
       cart.products = cart.products.filter((item) => {
-        return item.product1.id !== product1.id
-      })
+        return item.product1.id !== product1.id;
+      });
     }
-    cart.totalPrice = calcTotalPrice(cart)
-    localStorage.setItem('cart', JSON.stringify(cart))
+    cart.totalPrice = calcTotalPrice(cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
     dispatch({
-      type: 'ADD_AND_DELETE_CART',
-      payload: cart.products.length
-    })
-  }
+      type: "ADD_AND_DELETE_CART",
+      payload: cart.products.length,
+    });
+  };
   const checkProductInCart = (id) => {
-    let cart = JSON.parse(localStorage.getItem('cart'))
+    let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
       cart = {
         products: [],
-        totalPrice: 0
-      }
+        totalPrice: 0,
+      };
     }
     let checkArr = cart.products.filter((item) => {
-      return item.product1.id === id
-    })
+      return item.product1.id === id;
+    });
     if (checkArr.length === 0) {
-      return false
+      return false;
+    } else {
+      return true;
     }
-    else {
-      return true
-    }
-  }
+  };
   const getCart = () => {
-    let cart = JSON.parse(localStorage.getItem('cart'))
+    let cart = JSON.parse(localStorage.getItem("cart"));
     dispatch({
       type: "GET_CART",
-      payload: cart
-    })
-  }
+      payload: cart,
+    });
+  };
   const changeCountProduct = (count, id) => {
     if (count < 1) {
-      return
+      return;
     }
-    let cart = JSON.parse(localStorage.getItem('cart'))
+    let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
       cart = {
         products: [],
-        totalPrice: 0
-      }
+        totalPrice: 0,
+      };
     }
     cart.products = cart.products.map((item) => {
       if (item.product1.id === id) {
-        item.count = count
-        item.subPrice = CalcSubPrice(item)
+        item.count = count;
+        item.subPrice = CalcSubPrice(item);
       }
-      return item
-    })
-    cart.totalPrice = calcTotalPrice(cart)
-    localStorage.setItem('cart', JSON.stringify(cart))
+      return item;
+    });
+    cart.totalPrice = calcTotalPrice(cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-    getCart()
-  }
+    getCart();
+  };
 
   // ! favorites
   const addAndDeleteProductInFavorites = (item) => {
-    let favorite = JSON.parse(localStorage.getItem('favorite'))
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
     if (!favorite) {
       favorite = {
-        favorites: []
-      }
+        favorites: [],
+      };
     }
     let favProduct = {
-      item: item
-    }
+      item: item,
+    };
     let checkArr = favorite.favorites.filter((elem) => {
-      return elem.item.id === item.id
-    })
+      return elem.item.id === item.id;
+    });
     if (checkArr.length === 0) {
-      favorite.favorites.push(favProduct)
-    }
-    else {
+      favorite.favorites.push(favProduct);
+    } else {
       favorite.favorites = favorite.favorites.filter((elem) => {
-        return elem.item.id !== item.id
-      })
+        return elem.item.id !== item.id;
+      });
     }
-    localStorage.setItem('favorite', JSON.stringify(favorite))
+    localStorage.setItem("favorite", JSON.stringify(favorite));
     dispatch({
-      type: 'ADD_AND_DELETE_FAVORITES',
-      payload: favorite.favorites.length
-    })
-  }
+      type: "ADD_AND_DELETE_FAVORITES",
+      payload: favorite.favorites.length,
+    });
+  };
   const checkFavoriteInFavorites = (id) => {
-    let favorite = JSON.parse(localStorage.getItem('favorite'))
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
     if (!favorite) {
       favorite = {
-        favorites: []
-      }
+        favorites: [],
+      };
     }
     let checkArr = favorite.favorites.filter((elem) => {
-      return elem.item.id === id
-    })
+      return elem.item.id === id;
+    });
     if (checkArr.length === 0) {
-      return false
+      return false;
+    } else {
+      return true;
     }
-    else {
-      return true
-    }
-  }
+  };
   const getFavorite = () => {
-    let favorite = JSON.parse(localStorage.getItem('favorite'))
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
     dispatch({
       type: "GET_FAVORITES",
-      payload: favorite
-    })
-  }
+      payload: favorite,
+    });
+  };
 
   return (
     <clientContext.Provider
@@ -240,7 +238,7 @@ const ClientContextProvider = (props) => {
         productsCountInCart: state.productsCountInCart,
         cart: state.cart,
         productsCountInFavorites: state.productsCountInFavorites,
-        favorites: state.favorites
+        favorites: state.favorites,
       }}
     >
       {props.children}

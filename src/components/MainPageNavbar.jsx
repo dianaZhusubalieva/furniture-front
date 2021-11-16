@@ -18,6 +18,8 @@ import { ShoppingCart } from "@mui/icons-material";
 import { clientContext } from "../contexts/ClientContext";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { Button } from "@mui/material";
+import IMG from "../helpers/images/logout.png";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -59,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, adminEmail } = useAuth();
 
   // ! cart
   const { productsCountInCart } = React.useContext(clientContext);
@@ -174,9 +176,9 @@ export default function PrimarySearchAppBar() {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            style={{ color: "rgba(141, 141, 141, 0.563" }}
           >
             <MenuIcon />
           </IconButton>
@@ -188,7 +190,17 @@ export default function PrimarySearchAppBar() {
           >
             MUI
           </Typography>
-
+          {currentUser ? (
+            currentUser.email === adminEmail ? (
+              <Link to="/admin">
+                <Button>Admin</Button>
+              </Link>
+            ) : (
+              <p></p>
+            )
+          ) : (
+            <p></p>
+          )}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
@@ -198,7 +210,7 @@ export default function PrimarySearchAppBar() {
             >
               <Link to="/cart">
                 <Badge
-                  style={{ color: "white" }}
+                  style={{ color: "rgba(169, 169, 169, 0.748)" }}
                   badgeContent={productsCountInCart}
                   color="error"
                 >
@@ -209,7 +221,7 @@ export default function PrimarySearchAppBar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="inherit"
+              style={{ color: "rgba(169, 169, 169, 0.748)" }}
             >
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
@@ -217,17 +229,18 @@ export default function PrimarySearchAppBar() {
             </IconButton>
             {currentUser ? (
               <>
-                <h6 className="text3">{currentUser.email}</h6>
-
-                <button class="button-64" role="button" onClick={logout}>
-                  <span class="text1">logout</span>
-                </button>
+                <Button onClick={logout}>
+                  <h6 className="text3">{currentUser.email}</h6>
+                  <img src={IMG} alt="" />
+                </Button>
               </>
             ) : (
               <Link to="/register">
-                <button class="button-64" role="button">
-                  <span class="text1">sign up</span>
-                </button>
+                <Button>
+                  <AccountCircle
+                    style={{ color: "rgba(169, 169, 169, 0.748)" }}
+                  />
+                </Button>
               </Link>
             )}
           </Box>
