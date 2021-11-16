@@ -58,7 +58,7 @@ const AllProducts = () => {
             <FormControlLabel
               value="кровать"
               control={<Radio />}
-              label="Кровать"
+              label="Кровати"
             />
           </RadioGroup>
         </FormControl>
