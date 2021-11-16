@@ -1,19 +1,16 @@
 import React from "react";
+import image1 from "../../helpers/images/WallpaperDog-10803845.jpg";
 import Carousel from "nuka-carousel";
 const MyHeader = () => {
   return (
     <Carousel className="slider-img">
-      <img src="https://images5.alphacoders.com/903/thumb-1920-903172.jpg" />
+      <img src="https://images.wallpaperscraft.com/image/single/sofa_furniture_interior_design_style_comfort_70000_3840x2160.jpg" />
 
-      <img src="https://images.alphacoders.com/884/thumb-1920-884534.jpg" />
+      <img src="https://wallpaper.dog/large/10989128.jpg" />
+      <img src="https://i.pinimg.com/originals/f8/17/87/f81787d6ef48a9ba6a320db97630c594.jpg" />
+      <img src={image1} />
 
-      <img src="https://images8.alphacoders.com/595/thumb-1920-595107.jpg" />
-
-      <img src="https://images2.alphacoders.com/100/thumb-1920-1001235.jpg" />
-
-      <img src="https://images6.alphacoders.com/912/thumb-1920-912801.jpg" />
-
-      <img src="https://images3.alphacoders.com/912/thumb-1920-912803.jpg" />
+      <img src="https://wallpaper.dog/large/10989153.jpg" />
     </Carousel>
   );
 };

@@ -18,7 +18,10 @@ const AuthContext = createContext({
   signInWithGoogle: () => Promise,
   forgotPassword: () => Promise,
 });
-//! NAVBAR чтобы показать вошел или нет пользователь(если да то отобр имейла)
+
+//CREDIT cARD
+
+//! NAVBAR чтобы показать вошел или нет пользователь(если да  то отобр имейла)
 //  const {currentUser} = useAuth()
 
 export const useAuth = () => useContext(AuthContext);
@@ -26,6 +29,8 @@ export const useAuth = () => useContext(AuthContext);
 export default function AuthContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
 
+  currentUser ? console.log(currentUser.email) : console.log("odfk");
+  let adminEmail = "dinazhusubalieva@gmail.com";
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(authh, (user) => {
@@ -63,6 +68,7 @@ export default function AuthContextProvider({ children }) {
 
   const value = {
     currentUser,
+    adminEmail,
     register,
     login,
     logout,
