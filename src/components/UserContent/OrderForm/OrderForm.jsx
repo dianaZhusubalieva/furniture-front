@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './orderForm.css'
 const OrderForm = () => {
     return (
@@ -287,8 +288,9 @@ const OrderForm = () => {
                     <input id="tel" name="tel" autocomplete="tel" type="tel" maxlength="30" pattern="[\d \-\+]+" required />
                 </section>
 
-                <button id="save-address">Оплатить сейчас</button>
-
+                <Link to='/pay' >
+                    <button id="save-address">Оплатить сейчас</button>
+                </Link>
             </form>
 
         </main>
