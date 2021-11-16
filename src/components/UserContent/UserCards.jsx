@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import '../UserContent/Bayel.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { clientContext } from '../../contexts/ClientContext';
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
 const UserCards = ({ item }) => {
-    const { addAndDeleteProductInCart, checkProductInCart } = React.useContext(clientContext)
+    const { addAndDeleteProductInCart, checkProductInCart, addAndDeleteProductInFavorites,
+        checkFavoriteInFavorites } = React.useContext(clientContext)
 
     return (
 
@@ -32,6 +33,11 @@ const UserCards = ({ item }) => {
                     onClick={() => addAndDeleteProductInCart(item)}
                     className='shop-btn' color={checkProductInCart(item.id) ? 'error' : 'success'} variant='outlined' size="large">
                     <ShoppingCartIcon color={checkProductInCart(item.id) ? 'error' : ''} />
+                </Button>
+                <Button
+                    onClick={() => addAndDeleteProductInFavorites(item)}
+                    className='shop-btn' color={checkFavoriteInFavorites(item.id) ? 'error' : 'success'} variant='outlined' size="large">
+                    <FavoriteIcon color={checkFavoriteInFavorites(item.id) ? 'error' : ''} />
                 </Button>
 
                 <Link to={`/product/${item.id}`} >

@@ -19,7 +19,7 @@ import { clientContext } from "../contexts/ClientContext";
 import { useNavigate, Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
 import { ShoppingCart } from "@mui/icons-material";
-
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -76,7 +76,7 @@ export default function PrimarySearchAppBar() {
     getProductsClient.getProducts();
   };
   // ! cart
-  const { productsCountInCart } = React.useContext(clientContext);
+  const { productsCountInCart, productsCountInFavorites } = React.useContext(clientContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -160,11 +160,11 @@ export default function PrimarySearchAppBar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+          <Badge badgeContent={productsCountInFavorites} color="error">
+            <BookmarkBorderIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Избранное</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -241,8 +241,8 @@ export default function PrimarySearchAppBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+              <Badge badgeContent={productsCountInFavorites} color="error">
+                <BookmarkBorderIcon />
               </Badge>
             </IconButton>
             <IconButton
