@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { clientContext } from '../contexts/ClientContext';
 import { Button } from '@mui/material';
-
+import { Link } from 'react-router-dom'
 import MyNavbar from "../components/MyNavbar";
 const CartPage = () => {
     const { getCart, cart, changeCountProduct, addAndDeleteProductInCart } = useContext(clientContext)
@@ -57,7 +57,7 @@ const CartPage = () => {
                                                     <TableCell align="right"><Button
                                                         onClick={() => {
                                                             addAndDeleteProductInCart(item.product1)
-
+                                                            getCart()
                                                         }} >Удалить из корзины</Button> </TableCell>
 
                                                 </TableRow>
@@ -65,6 +65,11 @@ const CartPage = () => {
                                             <TableRow>
                                                 <TableCell colSpan={3} align='right' >Total:</TableCell>
                                                 <TableCell colSpan={1} align='right' >{cart.totalPrice} com</TableCell>
+                                                <TableCell colSpan={1} align='right' >
+                                                    <Link to='/order' >
+                                                        <Button>Заказать сейчас</Button>
+                                                    </Link>
+                                                </TableCell>
                                             </TableRow>
                                         </TableBody>
                                     </Table>
