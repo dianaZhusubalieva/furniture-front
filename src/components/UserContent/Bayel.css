@@ -211,3 +211,15 @@
 /* transition */
 
 /*     transition: transform .3s ease-in; */
+
+/* Favorites */
+
+.css-1wnsr1i {
+    border: none !important;
+    border-radius: 10px;
+}
+
+.favorite {
+    display: flex;
+    align-items: center;
+}

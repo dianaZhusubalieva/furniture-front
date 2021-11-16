@@ -8,14 +8,12 @@ export const clientContext = React.createContext();
 const INIT_STATE = {
   products: null,
   detailProduct: null,
-  productsCountInCart: JSON.parse(localStorage.getItem("cart"))
-    ? JSON.parse(localStorage.getItem("cart")).products.length
-    : 0,
+
+  productsCountInCart: JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')).products.length : 0,
   cart: null,
-  productsCountInFavorites: JSON.parse(localStorage.getItem("favorite"))
-    ? JSON.parse(localStorage.getItem("favorite")).favorites.length
-    : 0,
-  favorites: null,
+  productsCountInFavorites: JSON.parse(localStorage.getItem('favorite')) ? JSON.parse(localStorage.getItem('favorite')).favorites.length : 0,
+  favorites: null
+
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {

@@ -3,6 +3,8 @@ import { useParams } from 'react-router';
 import { clientContext } from '../contexts/ClientContext';
 import MyNavbar from "../components/MyNavbar";
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom'
+
 // snack
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
@@ -122,6 +124,9 @@ const DetailPage = () => {
                                         </Button>
                                     )
                                 }
+                                <Link to='/order' >
+                                    <Button>Заказать сейчас</Button>
+                                </Link>
                             </div>
                         </div>
                     ) : (

@@ -20,6 +20,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
 import { ShoppingCart } from "@mui/icons-material";
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import Favorites from "./UserContent/Favorites";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -76,7 +77,11 @@ export default function PrimarySearchAppBar() {
     getProductsClient.getProducts();
   };
   // ! cart
-  const { productsCountInCart, productsCountInFavorites } = React.useContext(clientContext);
+  const { productsCountInCart, productsCountInFavorites, getFavorite } = React.useContext(clientContext);
+  //  ! favorites
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -161,7 +166,11 @@ export default function PrimarySearchAppBar() {
           color="inherit"
         >
           <Badge badgeContent={productsCountInFavorites} color="error">
-            <BookmarkBorderIcon />
+            <BookmarkBorderIcon onClick={() => {
+              handleOpen()
+              getFavorite()
+            }} />
+
           </Badge>
         </IconButton>
         <p>Избранное</p>
@@ -182,97 +191,104 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            style={{ cursor: "pointer" }}
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            MUI
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              onChange={(e) => {
-                filterPhones(`q`, e.target.value);
+    <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="fixed">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              style={{ cursor: "pointer" }}
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+              onClick={() => {
+                navigate("/");
               }}
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
+            >
+              MUI
+            </Typography>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                onChange={(e) => {
+                  filterPhones(`q`, e.target.value);
+                }}
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Link to="/cart">
-                <Badge
-                  style={{ color: "white" }}
-                  badgeContent={productsCountInCart}
-                  color="error"
-                >
-                  <ShoppingCart />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+              >
+                <Link to="/cart">
+                  <Badge
+                    style={{ color: "white" }}
+                    badgeContent={productsCountInCart}
+                    color="error"
+                  >
+                    <ShoppingCart />
+                  </Badge>
+                </Link>
+              </IconButton>
+              <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={productsCountInFavorites} color="error">
+                  <BookmarkBorderIcon onClick={() => {
+                    handleOpen()
+                    getFavorite()
+                  }} />
+
                 </Badge>
-              </Link>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={productsCountInFavorites} color="error">
-                <BookmarkBorderIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
+              </IconButton>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+        {renderMenu}
+      </Box>
+      <Favorites open={open} handleClose={handleClose} handleOpen={handleOpen} />
+    </>
   );
 }

@@ -17,8 +17,12 @@ import MainPage from "./pages/MainPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import CartPage from "./pages/CartPage";
 
+import OrderPage from "./pages/OrderPage";
+
+
 import PaymentPage from "./pages/PaymentPage";
 // import PaymentPage from "./pages/PaymentPage";
+
 const MyRoutes = () => {
   return (
     <AuthContextProvider>
@@ -35,9 +39,13 @@ const MyRoutes = () => {
               <Route path="/register" element={<Registerpage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/forgot" element={<ForgotPasswordPage />} />
-
               <Route path="/cart" element={<CartPage />} />
+
+              <Route path="/order" element={<OrderPage />} />
+
+
               <Route path="/pay" element={<PaymentPage />} />
+
             </Routes>
           </BrowserRouter>
         </ClientContextProvider>
