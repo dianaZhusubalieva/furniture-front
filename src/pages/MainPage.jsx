@@ -17,6 +17,7 @@ const MainPage = () => {
       <MyContent2 />
 
       <MyContent4 />
+
       <MyFooter />
     </>
   );

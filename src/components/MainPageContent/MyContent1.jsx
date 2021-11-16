@@ -6,28 +6,28 @@ export default function StandardImageList() {
       <div className="container">
         <div className="content1">
           <div className="c1-text">
-            <h1>This is content</h1>
+            <h1>Bring joy home</h1>
             <p>
-              Konsept tasarım şıklığıyla yaşam alanlarında büyüleyici izler
-              bırakan Area Mobilya’nın, her parçası son detayına kadar özenle
-              hazırlanmış zarif modellerini keşfedin.
+              However you're celebrating this year, there's joy in the details:
+              family-style feats, tree trimming, holiday trimming, holiday
+              baking... Little moments add up to big time fun.
             </p>
           </div>
           <div className="c1-img">
-            <Link to="/products?type=диван">
-              <img src="https://secure.img1-fg.wfcdn.com/im/67950423/resize-h800-w800%5Ecompr-r85/1437/143724636/Goza+88.6%27%27+Velvet+Sofa.jpg" />
+            <Link to="/products?type=стол">
+              <img src="https://cdn.shopify.com/s/files/1/0265/0083/products/31480810_420x420.progressive.jpg?v=1605837264" />
             </Link>
             <Link to="/products?type=кресло">
-              <img src="https://secure.img1-fg.wfcdn.com/im/40186650/resize-h800-w800%5Ecompr-r85/1679/167937404/Howie+Armchair.jpg" />
+              <img src="https://cdn.shopify.com/s/files/1/0265/0083/products/9831781_420x420.progressive.jpg?v=1597738447" />
             </Link>
           </div>
           <div className="c1-img2">
-            <Link to="/products?type=стол">
-              <img src="https://assets.weimgs.com/weimgs/rk/images/wcm/products/202137/0009/silhouette-pedestal-round-dining-table-finley-chair-set-c.jpg" />
+            <Link to="/products?type=диван">
+              <img src="https://cdn.shopify.com/s/files/1/0265/0083/products/1919352_420x420.progressive.jpg?v=1578032878" />
             </Link>
 
             <Link to="/products?type=кровать">
-              <img src="https://media.architecturaldigest.com/photos/60a6efc4b8035041ccdab86c/1:1/w_1280,c_limit/cayman-platform-bed-headboard-1-o.jpg" />
+              <img src="https://cdn.shopify.com/s/files/1/0265/0083/products/34480459_420x420.progressive.jpg?v=1590128340" />
             </Link>
           </div>
         </div>

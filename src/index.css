@@ -79,17 +79,22 @@ code {
 
 .c1-text {
   position: absolute;
-  top: 20%;
+  top: 24%;
   width: 350px;
   left: 6%;
-  color: #3c3b33;
-  font-family: 'Trocchi', serif;
+  color: #303030;
+  font-family: 'Montagu Slab', serif;
   font-size: 20px;
   font-weight: normal;
-  line-height: 38px;
+  line-height: 34px;
   margin: 0
 }
 
+.c1-text h1{
+  padding-bottom: 14px;
+  letter-spacing: 1px;
+  line-height: 40px;
+}
 /* Content 2 */
 
 .content2 {
@@ -97,7 +102,6 @@ code {
 }
 
 /* Content 3 */
-
 
 /* Content4 */
 
@@ -115,7 +119,7 @@ code {
 }
 
 .content4 img {
-  padding-top: 50px;
+  padding-top: 0px;
   padding-bottom: 50px;
   cursor: pointer
 }
