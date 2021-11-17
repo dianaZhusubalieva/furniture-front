@@ -21,6 +21,7 @@ import OrderPage from "./pages/OrderPage";
 
 
 import PaymentPage from "./pages/PaymentPage";
+import TransactionSuccess from "./pages/TransactionSuccess";
 // import PaymentPage from "./pages/PaymentPage";
 
 const MyRoutes = () => {
@@ -40,11 +41,9 @@ const MyRoutes = () => {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/forgot" element={<ForgotPasswordPage />} />
               <Route path="/cart" element={<CartPage />} />
-
               <Route path="/order" element={<OrderPage />} />
-
-
               <Route path="/pay" element={<PaymentPage />} />
+              <Route path="/transactionsuccess" element={<TransactionSuccess />} />
 
             </Routes>
           </BrowserRouter>
