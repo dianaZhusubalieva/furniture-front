@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./CreditCardForm.css";
 
 const CreditCardForm = (props) => {
@@ -141,9 +142,11 @@ const CreditCardForm = (props) => {
           </div>
         </div>
         <div className="btn-form">
-          <button className="btnSubmit" type="submit">
-            подтвердить
-          </button>
+          <Link to='/transactionsuccess' >
+            <button className="btnSubmit" type="submit">
+              подтвердить
+            </button>
+          </Link>
         </div>
       </form>
     </>
