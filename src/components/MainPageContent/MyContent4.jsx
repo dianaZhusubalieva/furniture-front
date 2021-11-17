@@ -11,20 +11,20 @@ const MyContent3 = () => {
         <div className="content4">
           <div>
             <img
-              width="300"
+              width="350"
               src="https://www.pngarts.com/files/7/Modern-Furniture-PNG-Transparent-Image.png"
             />
           </div>
 
           <div>
             <img
-              width="300"
+              width="340"
               src="https://www.pngarts.com/files/7/Modern-Furniture-Transparent-Background-PNG.png"
             />
           </div>
           <div>
             <img
-              width="320"
+              width="350"
               src="https://www.pngarts.com/files/7/Furniture-PNG-Image-Transparent-Background.png"
             />
           </div>

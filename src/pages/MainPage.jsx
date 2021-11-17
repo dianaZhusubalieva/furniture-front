@@ -7,6 +7,7 @@ import MyFooter from "../components/MainPageContent/MyFooter";
 import MyContent4 from "../components/MainPageContent/MyContent4";
 
 import MainPageNavbar from "../components/MainPageNavbar";
+import MyContent5 from "../components/MainPageContent/MyContent5";
 
 const MainPage = () => {
   return (
@@ -17,6 +18,7 @@ const MainPage = () => {
       <MyContent2 />
 
       <MyContent4 />
+      <MyContent5 />
 
       <MyFooter />
     </>

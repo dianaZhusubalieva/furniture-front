@@ -57,6 +57,7 @@ code {
   background: url('https://cdn.pixabay.com/photo/2019/04/22/03/38/marble-4145542_1280.jpg');
   justify-content: space-between;
   position: relative;
+  
 }
 
 .c1-img, .c1-img2 {
@@ -83,18 +84,19 @@ code {
   width: 350px;
   left: 6%;
   color: #303030;
-  font-family: 'Montagu Slab', serif;
+  font-family: 'Montserrat', sans-serif;  
   font-size: 20px;
   font-weight: normal;
   line-height: 34px;
   margin: 0
 }
 
-.c1-text h1{
-  padding-bottom: 14px;
+.c1-text h1 {
+  padding-bottom: 17px;
   letter-spacing: 1px;
   line-height: 40px;
 }
+
 /* Content 2 */
 
 .content2 {
