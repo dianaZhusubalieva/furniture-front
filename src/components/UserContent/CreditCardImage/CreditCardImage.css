@@ -3,10 +3,12 @@
     --color-light1: #999999;
     --color-background: #222;
 }
+
 * {
     margin: 0;
     padding: 0;
 }
+
 .creditCard {
     height: 14rem;
     width: 22rem;
