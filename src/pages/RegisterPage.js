@@ -27,11 +27,13 @@ export default function Registerpage() {
             View Form
           </label> */}
         <div class="containerDi">
-          <label
-            for="show"
-            class="close-btn fas fa-times"
-            title="close"
-          ></label>
+          <Link to="/">
+            <label
+              for="show"
+              class="close-btn fas fa-times"
+              title="close"
+            ></label>
+          </Link>
           <div class="text">Sign up Form</div>
 
           {/* form///// */}

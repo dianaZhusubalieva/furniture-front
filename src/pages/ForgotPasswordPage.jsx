@@ -18,11 +18,14 @@ export default function ForgotPasswordPage() {
     <>
       <div className="bodyRegister">
         <div class="containerDi">
-          <label
-            for="show"
-            class="close-btn fas fa-times"
-            title="close"
-          ></label>
+          <Link to="/login">
+            <label
+              for="show"
+              class="close-btn fas fa-times"
+              title="close"
+            ></label>
+          </Link>
+
           <div class="text">Forgot password</div>
 
           {/* form///// */}

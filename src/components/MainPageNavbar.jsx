@@ -229,7 +229,7 @@ export default function PrimarySearchAppBar() {
               </>
             ) : (
               <Link to="/register">
-                <Button>
+                <Button style={{ marginTop: "7px" }}>
                   <AccountCircle
                     style={{ color: "rgba(102, 102, 102, 0.644)" }}
                   />
