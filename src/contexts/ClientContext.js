@@ -29,6 +29,8 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, productsCountInFavorites: action.payload };
     case "GET_FAVORITES":
       return { ...state, favorites: action.payload };
+    case "CLEAR_COUNT_OF_CART":
+      return { ...state, productsCountInCart: action.payload };
     default:
       return state;
   }
@@ -215,6 +217,12 @@ const ClientContextProvider = (props) => {
       payload: favorite,
     });
   };
+  const clearCountOfCart = () => {
+    dispatch({
+      type: "CLEAR_COUNT_OF_CART",
+      payload: null
+    })
+  }
 
   return (
     <clientContext.Provider
@@ -229,6 +237,7 @@ const ClientContextProvider = (props) => {
         addAndDeleteProductInFavorites,
         checkFavoriteInFavorites,
         getFavorite,
+        clearCountOfCart,
         totalPosts: totalPosts,
         currentPosts: currentPosts,
         postsPerPage: postsPerPage,

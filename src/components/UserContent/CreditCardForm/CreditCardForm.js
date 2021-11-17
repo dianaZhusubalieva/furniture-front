@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./CreditCardForm.css";
-
+import { useNavigate } from "react-router-dom";
+import { clientContext } from "../../../contexts/ClientContext";
 const CreditCardForm = (props) => {
+
+  const navigate = useNavigate()
   const [closeBtn, setCloseBtn] = useState(false);
   const [creditCardData, setcreditCardData] = useState({});
 
@@ -33,11 +36,13 @@ const CreditCardForm = (props) => {
     props.creditCardData(creditCardData);
   };
 
-  const sendForm = (e) => {
+  const { clearCountOfCart } = useContext(clientContext)
+  const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Send!!");
-  };
-
+    navigate('/transactionsuccess')
+    localStorage.removeItem('cart')
+    clearCountOfCart()
+  }
   return (
     <>
       <div
@@ -46,13 +51,14 @@ const CreditCardForm = (props) => {
       ></div>
       <form
         onKeyUp={handleChange}
-        onSubmit={sendForm}
+        onSubmit={handleSubmit}
         className={closeBtn ? "creditCardForm activeForm" : "creditCardForm"}
       >
         <div className="field-form">
           <label>номер карты</label>
           <div className="field-form-numCard">
             <input
+              required
               className="numCard-input"
               maxLength="4"
               ref={numCard01Ref}
@@ -62,6 +68,7 @@ const CreditCardForm = (props) => {
             />
             <span>-</span>
             <input
+              required
               className="numCard-input"
               maxLength="4"
               ref={numCard02Ref}
@@ -71,6 +78,7 @@ const CreditCardForm = (props) => {
             />
             <span>-</span>
             <input
+              required
               className="numCard-input"
               maxLength="4"
               ref={numCard03Ref}
@@ -80,6 +88,7 @@ const CreditCardForm = (props) => {
             />
             <span>-</span>
             <input
+              required
               className="numCard-input"
               maxLength="4"
               ref={numCard04Ref}
@@ -92,6 +101,7 @@ const CreditCardForm = (props) => {
         <div className="field-form">
           <label>ID карты</label>
           <input
+            required
             ref={nameCardRef}
             onChange={handleChange}
             type="text"
@@ -102,7 +112,7 @@ const CreditCardForm = (props) => {
         <div className="field-form-container">
           <div className="field-form">
             <label>Expiration date</label>
-            <select ref={monthCardRef} onChange={handleChange} type="number">
+            <select required ref={monthCardRef} onChange={handleChange} type="number">
               <option value="мес">мес</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -119,7 +129,7 @@ const CreditCardForm = (props) => {
             </select>
           </div>
           <div className="field-form">
-            <select ref={yearCardRef} onChange={handleChange} type="number">
+            <select required ref={yearCardRef} onChange={handleChange} type="number">
               <option value="год">год</option>
               <option value="20">2020</option>
               <option value="21">2021</option>
@@ -132,6 +142,7 @@ const CreditCardForm = (props) => {
           <div className="field-form">
             <label>CCV</label>
             <input
+              required
               ref={ccvCardRef}
               id="cvv"
               onChange={handleChange}
@@ -142,11 +153,12 @@ const CreditCardForm = (props) => {
           </div>
         </div>
         <div className="btn-form">
-          <Link to='/transactionsuccess' >
-            <button className="btnSubmit" type="submit">
-              подтвердить
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className="btnSubmit" type="submit">
+            подтвердить
+          </button>
+
         </div>
       </form>
     </>
