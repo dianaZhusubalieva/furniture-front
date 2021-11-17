@@ -125,7 +125,7 @@ const DetailPage = () => {
                                     )
                                 }
                                 <Link to='/order' >
-                                    <Button>Заказать сейчас</Button>
+                                    <Button className='order-btn' variant='contained' >Заказать сейчас</Button>
                                 </Link>
                             </div>
                         </div>
