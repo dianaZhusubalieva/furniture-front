@@ -7,6 +7,7 @@ import MyFooter from "../components/MainPageContent/MyFooter";
 import MyContent4 from "../components/MainPageContent/MyContent4";
 
 import MainPageNavbar from "../components/MainPageNavbar";
+import DelMethods from "../components/MainPageContent/DelMethods";
 
 const MainPage = () => {
   return (
@@ -17,7 +18,7 @@ const MainPage = () => {
       <MyContent2 />
 
       <MyContent4 />
-
+      <DelMethods />
       <MyFooter />
     </>
   );

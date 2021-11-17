@@ -249,6 +249,45 @@
     margin-top: 20px;
 }
 
+/* content 4 */
+
+.del-m {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #EFEFEF;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.del-m h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.del-m img {
+    width: 50px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.del-m p {
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+}
+
+.del-block {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.del-items {
+    text-align: center;
+}
+
+/*  */
+
 @media screen and (max-width: 500px) {
     .tr-succ h1 {
         font-size: 25px;
