@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './orderForm.css'
 import { useNavigate } from 'react-router';
+import { Button } from '@mui/material'
 const OrderForm = () => {
     const navigate = useNavigate()
     return (
@@ -293,6 +294,11 @@ const OrderForm = () => {
                 </section>
 
                 <button type='submit' id="save-address">Оплатить сейчас</button>
+
+                <Button id='order-cancel-btn' onClick={() => {
+                    navigate('/products')
+                }} >Отменить</Button>
+
 
             </form>
 

@@ -1,6 +1,6 @@
 import "./diana.css";
-import { useEffect, useRef, useState } from "react";
-import { useNavigate, navigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 import { useAuth } from "../contexts/AuthContext";
@@ -15,7 +15,6 @@ export default function Registerpage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { login } = useAuth();
-
   return (
     <>
       <div className="bodyRegister">
@@ -25,7 +24,7 @@ export default function Registerpage() {
             class="close-btn fas fa-times"
             title="close"
           ></label>
-          <div class="text">Login Form</div>
+          <div class="text">Вход</div>
 
           {/* form///// */}
           <form
@@ -44,8 +43,7 @@ export default function Registerpage() {
               setIsSubmitting(true);
               login(email, password)
                 .then((response) => {
-                  console.log(response);
-                  navigate("/");
+                  navigate(-2)
                 })
                 .catch((error) => {
                   console.log(error.message);
@@ -62,7 +60,7 @@ export default function Registerpage() {
             }}
           >
             <div class="data">
-              <label>Email or Phone</label>
+              <label>Ваш email</label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
@@ -70,7 +68,7 @@ export default function Registerpage() {
               />
             </div>
             <div class="data">
-              <label>Password</label>
+              <label>Введите пароль</label>
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
@@ -80,15 +78,15 @@ export default function Registerpage() {
             </div>
             <div class="forgot-pass">
               <Link to="/forgot">
-                <a href="#">Forgot Password?</a>
+                <a href="#">Забыли пароль?</a>
               </Link>
             </div>
             <div class="btn">
               <div class="inner"></div>
-              <button type="submit">login</button>
+              <button type="submit">войти</button>
             </div>
             <div class="signup-link">
-              not a member? <Link to="/register">sign up</Link>
+              Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
             </div>
           </form>
 

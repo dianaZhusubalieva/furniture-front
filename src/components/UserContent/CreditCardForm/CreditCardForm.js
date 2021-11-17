@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+
 import "./CreditCardForm.css";
 import { useNavigate } from "react-router-dom";
 import { clientContext } from "../../../contexts/ClientContext";
@@ -37,12 +37,14 @@ const CreditCardForm = (props) => {
   };
 
   const { clearCountOfCart } = useContext(clientContext)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate('/transactionsuccess')
     localStorage.removeItem('cart')
     clearCountOfCart()
   }
+
   return (
     <>
       <div

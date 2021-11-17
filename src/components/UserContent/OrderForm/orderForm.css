@@ -6,18 +6,24 @@
     border-style: dotted;
 }
 
+#order-cancel-btn {
+    background-color: #DC143C;
+    border-radius: 10px;
+    padding: 12px;
+}
+
 .order-form button {
     background-color: black;
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 10px;
     color: #eee;
     cursor: pointer;
-    display: block;
     font-size: 20px;
     /* fallback */
     font-size: var(--large-mobile-font-size);
     font-weight: 400;
-    margin: 3px 0 0 0;
+    margin: 3px 0 0 20px;
+    flex-wrap: wrap;
     padding: 14px;
 }
 
