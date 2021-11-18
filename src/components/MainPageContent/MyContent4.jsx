@@ -4,7 +4,7 @@ import React from "react";
 const MyContent3 = () => {
   return (
     <div className="c4-img">
-      <Container static>
+      <Container static className="best">
         <div className="bestsellers">
           <h2>Best Sellers</h2>
         </div>

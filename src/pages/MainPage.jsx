@@ -8,6 +8,7 @@ import MyContent4 from "../components/MainPageContent/MyContent4";
 
 import MainPageNavbar from "../components/MainPageNavbar";
 import MyContent5 from "../components/MainPageContent/MyContent5";
+// import EmptyDiv from "../components/MainPageContent/EmptyDiv";
 // import MyContent6 from "../components/MainPageContent/MyContent6";
 
 const MainPage = () => {
@@ -15,6 +16,7 @@ const MainPage = () => {
     <>
       <MainPageNavbar />
       <MyHeader />
+      {/* <EmptyDiv /> */}
       <MyContent1 />
       <MyContent2 />
 

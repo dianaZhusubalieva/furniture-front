@@ -258,7 +258,8 @@ form .signup-link a:hover {
     line-height: 24px;
     font-family: 'Josefin Sans';
     font-weight: 300;
-    padding-bottom: 2px;
+    padding-bottom: 6px;
+    
     cursor: pointer;
     color: rgba(59, 59, 59, 0.705);
     border-bottom: 1px solid #606060
@@ -285,6 +286,11 @@ form .signup-link a:hover {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 70px auto;
+    
+}
+.mainCard{
+    background-color: rgb(219, 219, 219);
 }
 
 .card {
@@ -340,7 +346,17 @@ form .signup-link a:hover {
     }
 }
 
-.video{
+.video {
     width: 100%;
     height: 100%;
+}
+
+/* .empty {
+    width: 100%;
+    height: 90px;
+    background: url("https://wallpaperaccess.com/full/765778.png")
+} */
+
+.best{
+    margin: 40px auto;
 }
