@@ -7,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { clientContext } from "../contexts/ClientContext";
-import { Button, Card } from "@mui/material";
+import { Button } from "@mui/material";
 
 import MyNavbar from "../components/MyNavbar";
 import { Link } from "react-router-dom";
@@ -21,7 +21,7 @@ const CartPage = () => {
         <>
             <MyNavbar />
             <div className="cart-page">
-                <h2>Корзина</h2>
+                <h2>Cart</h2>
                 {cart ? (
                     cart.products.length > 0 ? (
                         <div>
@@ -29,10 +29,10 @@ const CartPage = () => {
                                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>Название</TableCell>
-                                            <TableCell align="right">Фото</TableCell>
-                                            <TableCell align="right">Кол-во</TableCell>
-                                            <TableCell align="right">Сумма</TableCell>
+                                            <TableCell>Name</TableCell>
+                                            <TableCell align="right">Image</TableCell>
+                                            <TableCell align="right">Count</TableCell>
+                                            <TableCell align="right">Total Price</TableCell>
                                             <TableCell align="right">#</TableCell>
                                         </TableRow>
                                     </TableHead>
@@ -71,23 +71,24 @@ const CartPage = () => {
                                                     <Button
                                                         onClick={() => {
                                                             addAndDeleteProductInCart(item.product1);
+                                                            getCart()
                                                         }}
                                                     >
-                                                        Удалить из корзины
+                                                        Delete from cart
                                                     </Button>{" "}
                                                 </TableCell>
                                             </TableRow>
                                         ))}
                                         <TableRow>
                                             <TableCell colSpan={3} align="right">
-                                                Total:
+                                                Total price:
                                             </TableCell>
                                             <TableCell colSpan={1} align="right">
                                                 {cart.totalPrice} com
                                             </TableCell>
                                             <TableCell colSpan={1} align="right">
                                                 <Link to="/order">
-                                                    <Button>Заказать сейчас</Button>
+                                                    <Button>Buy Now</Button>
                                                 </Link>
                                             </TableCell>
                                         </TableRow>
@@ -96,7 +97,12 @@ const CartPage = () => {
                             </TableContainer>
                         </div>
                     ) : (
-                        <h2>У вас нет товаров</h2>
+                        <>
+                            <h2>Your cart is empty</h2>
+                            <Link to='/products' >
+                                <Button variant='outlined' >Go Back</Button>
+                            </Link>
+                        </>
                     )
                 ) : (
                     <h2>Loading...</h2>

@@ -14,17 +14,17 @@ import MyNavbar from "../components/MyNavbar";
 
 const EditPage = () => {
   const schema = yup.object({
-    name: yup.string().min(3).max(30).required("Обязательно для заполнения"),
+    name: yup.string().min(3).max(30).required("Required field"),
     description: yup
       .string()
       .min(10)
       .max(255)
-      .required("Обязательно для заполнения"),
-    image: yup.string().required("Обязательно для заполнения"),
-    price: yup.number().min(3).required("Обязательно для заполнения"),
-    color: yup.string().required("Обязательно для заполнения"),
-    model: yup.string().min(1).max(30).required("Обязательно для заполнения"),
-    type: yup.string().required("Поле обязательно для заполнения"),
+      .required("Required field"),
+    image: yup.string().required("Required field"),
+    price: yup.number().min(3).required("Required field"),
+    color: yup.string().required("Required field"),
+    model: yup.string().min(1).max(30).required("Required field"),
+    type: yup.string().required("Поле Required field"),
   });
   const params = useParams();
   const { getProductToEdit, productToEdit, saveEditedProduct } =
@@ -37,7 +37,7 @@ const EditPage = () => {
     <>
       <MyNavbar />
       <div className="edit-page">
-        <h2>Редактирование мебели</h2>
+        <h2>Edit Furniture</h2>
         {productToEdit ? (
           <Formik
             validationSchema={schema}
@@ -50,7 +50,7 @@ const EditPage = () => {
             {({ handleSubmit, handleChange, values, touched, errors }) => (
               <form onSubmit={handleSubmit}>
                 <TextField
-                  label="Название мебели"
+                  label="Name of furniture"
                   type="text"
                   variant="standard"
                   name="name"
@@ -60,7 +60,7 @@ const EditPage = () => {
                   onChange={handleChange}
                 />
                 <TextField
-                  label="Описание мебели"
+                  label="Description of furniture"
                   type="text"
                   variant="standard"
                   name="description"
@@ -70,7 +70,7 @@ const EditPage = () => {
                   onChange={handleChange}
                 />
                 <TextField
-                  label="Фото мебели"
+                  label="Image of furniture"
                   type="text"
                   variant="standard"
                   name="image"
@@ -80,7 +80,7 @@ const EditPage = () => {
                   onChange={handleChange}
                 />
                 <TextField
-                  label="Цена мебели"
+                  label="Price of furniture"
                   type="number"
                   variant="standard"
                   name="price"
@@ -90,7 +90,7 @@ const EditPage = () => {
                   onChange={handleChange}
                 />
                 <TextField
-                  label="Цвет мебели"
+                  label="Color of furniture"
                   type="text"
                   variant="standard"
                   name="color"
@@ -101,7 +101,7 @@ const EditPage = () => {
                 />
 
                 <TextField
-                  label="Модель мебели"
+                  label="Model of furniture"
                   type="text"
                   variant="standard"
                   name="model"
@@ -112,27 +112,27 @@ const EditPage = () => {
                 />
                 <Box sx={{ minWidth: 200 }}>
                   <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Тип</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Type</InputLabel>
                     <Select
                       variant="standard"
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       name="type"
                       value={values.type}
-                      label="Тип"
+                      label="Type of Furniture"
                       onChange={handleChange}
                       error={!!errors.type && touched.type}
                       helperText={touched.type ? errors.type : ""}
                     >
-                      <MenuItem value="кровать">Кровать</MenuItem>
-                      <MenuItem value="диван">Диван</MenuItem>
-                      <MenuItem value="кресло">Кресло</MenuItem>
-                      <MenuItem value="стол">Стол</MenuItem>
+                      <MenuItem value="кровать">Bed</MenuItem>
+                      <MenuItem value="диван">Sofa</MenuItem>
+                      <MenuItem value="кресло">Arm chair</MenuItem>
+                      <MenuItem value="стол">Table</MenuItem>
                     </Select>
                   </FormControl>
                 </Box>
                 <Button variant="contained" color="primary" type="submit">
-                  Сохранить изменения
+                  Save changes
                 </Button>
               </form>
             )}

@@ -25,13 +25,13 @@ export default function BasicTable() {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Названиe</TableCell>
-                <TableCell align="right">Описание</TableCell>
-                <TableCell align="right">Фото</TableCell>
-                <TableCell align="right">Цена</TableCell>
-                <TableCell align="right">Цвет</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell align="right">Description</TableCell>
+                <TableCell align="right">Image</TableCell>
+                <TableCell align="right">Price</TableCell>
+                <TableCell align="right">Color</TableCell>
 
-                <TableCell align="right">Модель</TableCell>
+                <TableCell align="right">Model</TableCell>
                 <TableCell align="right">#</TableCell>
                 <TableCell align="right">#</TableCell>
               </TableRow>
@@ -65,8 +65,11 @@ export default function BasicTable() {
                     </Link>
                   </TableCell>
                   <TableCell align="right">
-                    <Button onClick={() => deleteProduct(product.id)}>
-                      Del
+                    <Button onClick={() => {
+                      deleteProduct(product.id)
+                      getProducts()
+                    }}>
+                      Delete
                     </Button>
                   </TableCell>
                 </TableRow>

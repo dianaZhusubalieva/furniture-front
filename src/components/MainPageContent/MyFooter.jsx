@@ -95,7 +95,7 @@ const MyFooter = () => {
           <div class="inb">
             <p>
               Copyrights<sup>&copy;</sup> 2021 Makers. Developed with{" "}
-              <i class="fas fa-heart" style={{ color: "red" }}></i>
+              <img style={{ width: '20px' }} src="https://cdn-icons-png.flaticon.com/512/1077/1077086.png" alt="" />
             </p>
           </div>
         </div>

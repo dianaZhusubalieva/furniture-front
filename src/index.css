@@ -57,10 +57,8 @@ code {
   background: url('https://wallpaperaccess.com/full/765778.png');
   justify-content: space-between;
   position: relative;
-  height: 680px;
-  padding-top: 100px;
-
-
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 .c1-img, .c1-img2 {
@@ -68,6 +66,7 @@ code {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .c1-img img, .c1-img2 img {
@@ -171,12 +170,38 @@ code {
     width: 400px;
     height: 180px;
   }
+
+  .c1-text {
+    font-size: 20px;
+
+  }
+
+  .c1-text h1 {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 460px) {
   .content3 img {
     width: 300px;
     height: 180px;
+  }
+
+  .content4 img:hover {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    transition-duration: none;
+    transition: none;
+  }
+
+  .slider-slide img {
+
+    width: unset !important;
+  }
+
+  .add-page form, .edit-page form {
+    width: unset;
   }
 }
 
@@ -193,5 +218,17 @@ code {
   .content3 img {
     width: 200px;
     height: 180px;
+  }
+
+  .c1-text {
+    font-size: 15px;
+  }
+
+  .c1-text h1 {
+    font-size: 20px;
+  }
+
+  .content4 img {
+    width: 300px !important;
   }
 }

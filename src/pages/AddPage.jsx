@@ -17,32 +17,32 @@ const AddPage = () => {
   const schema = yup.object({
     name: yup
       .string()
-      .min(3, "Минимальное количество символов 3")
-      .max(30, "Максимальное количество символов 30")
-      .required("Поле обязательно для заполнения"),
+      .min(3, "min count 3")
+      .max(30, "max count 30")
+      .required("Required field"),
     description: yup
       .string()
-      .min(10, "Минимальное количество символов 10")
-      .max(255, "Максимальное количество символов 255")
-      .required("Поле обязательно для заполнения"),
+      .min(10, "min count 10")
+      .max(255, "max count 255")
+      .required("Required field"),
     image: yup
       .string()
 
-      .required("Поле обязательно для заполнения"),
+      .required("Required field"),
     price: yup
       .number()
-      .min(3, "Минимальное количество символов 3")
+      .min(3, "min count 3")
 
-      .required("Поле обязательно для заполнения"),
-    color: yup.string().required("Поле обязательно для заполнения"),
+      .required("Required field"),
+    color: yup.string().required("Required field"),
     model: yup
       .string()
-      .min(1, "Минимальное количество символов 1")
-      .max(30, "Максимальное количество символов 30")
-      .required("Поле обязательно для заполнения"),
+      .min(1, "min count 1")
+      .max(30, "max count 30")
+      .required("Required field"),
     type: yup
       .string()
-      .required("Поле обязательно для заполнения"),
+      .required("Required field"),
   });
 
   const { addProduct } = React.useContext(adminContext);
@@ -53,7 +53,7 @@ const AddPage = () => {
     <>
       <MyNavbar />
       <div className="add-page">
-        <h2>Добавить мебель</h2>
+        <h2>Add Furniture</h2>
         <Formik
           validationSchema={schema}
           onSubmit={(product) => {
@@ -73,7 +73,7 @@ const AddPage = () => {
           {({ handleSubmit, handleChange, values, touched, errors }) => (
             <form onSubmit={handleSubmit}>
               <TextField
-                label="Название мебели"
+                label="Name of furniture"
                 type="text"
                 variant="standard"
                 name="name"
@@ -83,7 +83,7 @@ const AddPage = () => {
                 onChange={handleChange}
               />
               <TextField
-                label="Описание мебели"
+                label="Description of furniture"
                 type="text"
                 variant="standard"
                 name="description"
@@ -93,7 +93,7 @@ const AddPage = () => {
                 onChange={handleChange}
               />
               <TextField
-                label="Фото мебели"
+                label="Image of furniture"
                 type="text"
                 variant="standard"
                 name="image"
@@ -103,7 +103,7 @@ const AddPage = () => {
                 onChange={handleChange}
               />
               <TextField
-                label="Цена мебели"
+                label="Price of furniture"
                 type="number"
                 variant="standard"
                 name="price"
@@ -113,7 +113,7 @@ const AddPage = () => {
                 onChange={handleChange}
               />
               <TextField
-                label="Цвет мебели"
+                label="Color of furniture"
                 type="text"
                 variant="standard"
                 name="color"
@@ -124,7 +124,7 @@ const AddPage = () => {
               />
 
               <TextField
-                label="Модель мебели"
+                label="Model of furniture"
                 type="text"
                 variant="standard"
                 name="model"
@@ -136,28 +136,28 @@ const AddPage = () => {
 
               <Box sx={{ minWidth: 200 }}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-helper-label">Тип</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Type</InputLabel>
                   <Select
-                    // label="Тип"
-                    variant='standard'
+                    variant="standard"
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    name='type'
+                    name="type"
                     value={values.type}
+                    label="Type of Furniture"
                     onChange={handleChange}
                     error={!!errors.type && touched.type}
                     helperText={touched.type ? errors.type : ""}
                   >
-                    <MenuItem value='кровать'>Кровать</MenuItem>
-                    <MenuItem value="диван">Диван</MenuItem>
-                    <MenuItem value="кресло">Кресло</MenuItem>
-                    <MenuItem value="стол">Стол</MenuItem>
+                    <MenuItem value="кровать">Bed</MenuItem>
+                    <MenuItem value="диван">Sofa</MenuItem>
+                    <MenuItem value="кресло">Arm chair</MenuItem>
+                    <MenuItem value="стол">Table</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
 
               <Button variant="contained" color="primary" type="submit">
-                Добавить мебель
+                Add furniture
               </Button>
             </form>
           )}
