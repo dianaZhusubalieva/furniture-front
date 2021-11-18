@@ -250,7 +250,7 @@ form .signup-link a:hover {
     font-family: Montserrat-R, Montserrat-L, IndieFlower-R, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgba(0, 0, 0, 0.911)
+    background-color: rgba(0, 0, 0, 0.911),
 }
 
 .bestsellers h2 {
@@ -258,14 +258,105 @@ form .signup-link a:hover {
     line-height: 24px;
     font-family: 'Josefin Sans';
     font-weight: 300;
-    padding-bottom: 2px;
+    padding-bottom: 6px;
+    
     cursor: pointer;
+    color: rgba(59, 59, 59, 0.705);
+    border-bottom: 1px solid #606060
 }
 
 .bestsellers {
     display: flex;
     justify-content: center;
-    padding-top: 30px ;
-    text-decoration-line: underline ;
-    text-decoration-thickness: 1px;
+    padding-top: 30px;
+}
+
+.main-logo {
+    font-family: ' Arapey', serif;
+    color: rgba(138, 138, 138, 0.548);
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+/* product category cards */
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 70px auto;
+    
+}
+.mainCard{
+    background-color: rgb(219, 219, 219);
+}
+
+.card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+}
+
+.card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+@media all and (max-width: 500px) {
+    .card-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
+    }
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+/* .empty {
+    width: 100%;
+    height: 90px;
+    background: url("https://wallpaperaccess.com/full/765778.png")
+} */
+
+.best{
+    margin: 40px auto;
 }

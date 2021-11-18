@@ -21,8 +21,12 @@ import { clientContext } from "../contexts/ClientContext";
 import { useNavigate, Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
 import { ShoppingCart } from "@mui/icons-material";
+
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+
 import { useAuth } from "../contexts/AuthContext";
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+
 import Favorites from "./UserContent/Favorites";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -80,7 +84,8 @@ export default function PrimarySearchAppBar() {
     getProductsClient.getProducts();
   };
   // ! cart
-  const { productsCountInCart, productsCountInFavorites, getFavorite } = React.useContext(clientContext);
+  const { productsCountInCart, productsCountInFavorites, getFavorite } =
+    React.useContext(clientContext);
   //  ! favorites
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -187,11 +192,12 @@ export default function PrimarySearchAppBar() {
           color="inherit"
         >
           <Badge badgeContent={productsCountInFavorites} color="error">
-            <BookmarkBorderIcon onClick={() => {
-              handleOpen()
-              getFavorite()
-            }} />
-
+            <BookmarkBorderIcon
+              onClick={() => {
+                handleOpen();
+                getFavorite();
+              }}
+            />
           </Badge>
         </IconButton>
         <p>Избранное</p>
@@ -219,15 +225,16 @@ export default function PrimarySearchAppBar() {
             <IconButton
               size="large"
               edge="start"
-              color="inherit"
+              style={{ color: "rgba(102, 102, 102, 0.644)" }}
               aria-label="open drawer"
               sx={{ mr: 2 }}
             >
               <MenuIcon />
             </IconButton>
-            <Typography
+
+            <h2
+              className="main-logo"
               style={{ cursor: "pointer" }}
-              variant="h6"
               noWrap
               component="div"
               sx={{ display: { xs: "none", sm: "block" } }}
@@ -235,11 +242,12 @@ export default function PrimarySearchAppBar() {
                 navigate("/");
               }}
             >
-              MUI
-            </Typography>
+              Industry West
+            </h2>
+
             <Search>
               <SearchIconWrapper>
-                <SearchIcon />
+                <SearchIcon style={{ color: "rgba(102, 102, 102, 0.644)" }} />
               </SearchIconWrapper>
               <StyledInputBase
                 onChange={(e) => {
@@ -247,6 +255,7 @@ export default function PrimarySearchAppBar() {
                 }}
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
+                style={{ color: "rgba(102, 102, 102, 0.644)" }}
               />
             </Search>
             {currentUser ? (
@@ -266,11 +275,11 @@ export default function PrimarySearchAppBar() {
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
-                color="inherit"
+                style={{ color: "rgba(102, 102, 102, 0.644)" }}
               >
                 <Link to="/cart">
                   <Badge
-                    style={{ color: "white" }}
+                    style={{ color: "rgba(102, 102, 102, 0.644)" }}
                     badgeContent={productsCountInCart}
                     color="error"
                   >
@@ -281,18 +290,27 @@ export default function PrimarySearchAppBar() {
               <IconButton
                 size="large"
                 aria-label="show 17 new notifications"
-                color="inherit"
+                style={{ color: "rgba(102, 102, 102, 0.644)" }}
               >
                 <Badge badgeContent={productsCountInFavorites} color="error">
-                  <BookmarkBorderIcon onClick={() => {
-                    handleOpen()
-                    getFavorite()
-                  }} />
-
+                  <BookmarkBorderIcon
+                    onClick={() => {
+                      handleOpen();
+                      getFavorite();
+                    }}
+                  />
                 </Badge>
               </IconButton>
               <IconButton
                 size="large"
+
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                style={{ color: "rgba(102, 102, 102, 0.644)" }}
+
               >
                 {currentUser ? (
                   <>
@@ -319,7 +337,7 @@ export default function PrimarySearchAppBar() {
                 aria-controls={mobileMenuId}
                 aria-haspopup="true"
                 onClick={handleMobileMenuOpen}
-                color="inherit"
+                style={{ color: "rgba(102, 102, 102, 0.644)" }}
               >
                 <MoreIcon />
               </IconButton>
@@ -329,7 +347,11 @@ export default function PrimarySearchAppBar() {
         {renderMobileMenu}
         {renderMenu}
       </Box>
-      <Favorites open={open} handleClose={handleClose} handleOpen={handleOpen} />
+      <Favorites
+        open={open}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
+      />
     </>
   );
 }

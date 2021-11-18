@@ -19,12 +19,18 @@ export default function Registerpage() {
     <>
       <div className="bodyRegister">
         <div class="containerDi">
-          <label
-            for="show"
-            class="close-btn fas fa-times"
-            title="close"
-          ></label>
-          <div class="text">Вход</div>
+
+          <Link to="/">
+            <label
+              for="show"
+              class="close-btn fas fa-times"
+              title="close"
+            ></label>
+          </Link>
+
+          <div class="text">Login Form</div>
+
+     
 
           {/* form///// */}
           <form

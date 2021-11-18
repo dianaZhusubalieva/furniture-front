@@ -178,18 +178,11 @@ export default function PrimarySearchAppBar() {
             edge="start"
             aria-label="open drawer"
             sx={{ mr: 2 }}
-            style={{ color: "rgba(141, 141, 141, 0.563" }}
+            style={{ color: "rgba(102, 102, 102, 0.644)" }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            MUI
-          </Typography>
+          <h2 className="main-logo">Industry West</h2>
           {currentUser ? (
             currentUser.email === adminEmail ? (
               <Link to="/admin">
@@ -210,7 +203,7 @@ export default function PrimarySearchAppBar() {
             >
               <Link to="/cart">
                 <Badge
-                  style={{ color: "rgba(169, 169, 169, 0.748)" }}
+                  style={{ color: "rgba(102, 102, 102, 0.644)" }}
                   badgeContent={productsCountInCart}
                   color="error"
                 >
@@ -221,7 +214,7 @@ export default function PrimarySearchAppBar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              style={{ color: "rgba(169, 169, 169, 0.748)" }}
+              style={{ color: "rgba(102, 102, 102, 0.644)" }}
             >
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
@@ -236,9 +229,9 @@ export default function PrimarySearchAppBar() {
               </>
             ) : (
               <Link to="/register">
-                <Button>
+                <Button style={{ marginTop: "7px" }}>
                   <AccountCircle
-                    style={{ color: "rgba(169, 169, 169, 0.748)" }}
+                    style={{ color: "rgba(102, 102, 102, 0.644)" }}
                   />
                 </Button>
               </Link>
