@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Button } from "@mui/material";
+import IMG from "../helpers/images/logout.png";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -19,7 +21,12 @@ import { clientContext } from "../contexts/ClientContext";
 import { useNavigate, Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
 import { ShoppingCart } from "@mui/icons-material";
+
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+
+import { useAuth } from "../contexts/AuthContext";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+
 import Favorites from "./UserContent/Favorites";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -83,6 +90,8 @@ export default function PrimarySearchAppBar() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  //  ! account
+  const { currentUser, logout, adminEmail } = useAuth();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -124,8 +133,24 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {
+        currentUser ? (
+          <>
+            <Button onClick={logout}>
+              <h6 className="text3">{currentUser.email}</h6>
+              <img src={IMG} alt="" />
+            </Button>
+          </>
+        ) : (
+          <Link to="/register">
+            <Button >
+              Войти
+              <AccountCircle
+                style={{ color: "rgba(169, 169, 169, 0.748)" }}
+              />
+            </Button>
+          </Link>
+        )}
     </Menu>
   );
 
@@ -187,7 +212,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>Профиль</p>
       </MenuItem>
     </Menu>
   );
@@ -233,6 +258,17 @@ export default function PrimarySearchAppBar() {
                 style={{ color: "rgba(102, 102, 102, 0.644)" }}
               />
             </Search>
+            {currentUser ? (
+              currentUser.email === adminEmail ? (
+                <Link to="/admin">
+                  <Button>Admin</Button>
+                </Link>
+              ) : (
+                null
+              )
+            ) : (
+              null
+            )}
             <Box sx={{ flexGrow: 1 }} />
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -267,14 +303,31 @@ export default function PrimarySearchAppBar() {
               </IconButton>
               <IconButton
                 size="large"
+
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
                 style={{ color: "rgba(102, 102, 102, 0.644)" }}
+
               >
-                <AccountCircle />
+                {currentUser ? (
+                  <>
+                    <Button onClick={logout}>
+                      <h6 className="text3">{currentUser.email}</h6>
+                      <img src={IMG} alt="" />
+                    </Button>
+                  </>
+                ) : (
+                  <Link to="/register">
+                    <Button>
+                      <AccountCircle
+                        style={{ color: "rgba(169, 169, 169, 0.748)" }}
+                      />
+                    </Button>
+                  </Link>
+                )}
               </IconButton>
             </Box>
             <Box sx={{ display: { xs: "flex", md: "none" } }}>

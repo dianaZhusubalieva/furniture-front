@@ -47,6 +47,32 @@ const DetailPage = () => {
 
         setOpen1(false);
     };
+    const [open3, setOpen3] = React.useState(false);
+
+    const handleClick3 = () => {
+        setOpen3(true);
+    };
+
+    const handleClose3 = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen3(false);
+    };
+    const [open4, setOpen4] = React.useState(false);
+
+    const handleClick4 = () => {
+        setOpen4(true);
+    };
+
+    const handleClose4 = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen4(false);
+    };
     return (
         <>
             <Stack spacing={2} sx={{ width: '100%' }}>
@@ -60,6 +86,19 @@ const DetailPage = () => {
             <Stack spacing={2} sx={{ width: '100%' }}>
                 <Snackbar open={open1} autoHideDuration={2000} onClose={handleClose1}>
                     <Alert severity="error">Удалено из корзины</Alert>
+                </Snackbar>
+            </Stack>
+            <Stack spacing={2} sx={{ width: '100%' }}>
+                <Snackbar open={open3} autoHideDuration={2000} onClose={handleClose3}>
+                    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                        Добавлено в избранное
+                    </Alert>
+                </Snackbar>
+            </Stack>
+
+            <Stack spacing={2} sx={{ width: '100%' }}>
+                <Snackbar open={open4} autoHideDuration={2000} onClose={handleClose4}>
+                    <Alert severity="error">Удалено из избранных</Alert>
                 </Snackbar>
             </Stack>
             <MyNavbar />
@@ -107,6 +146,7 @@ const DetailPage = () => {
                                         <Button
                                             onClick={() => {
                                                 addAndDeleteProductInFavorites(detailProduct)
+                                                handleClick4()
 
                                             }}
                                             className='shop-btn' color='error' variant='outlined' size="large">
@@ -117,6 +157,7 @@ const DetailPage = () => {
                                         <Button
                                             onClick={() => {
                                                 addAndDeleteProductInFavorites(detailProduct)
+                                                handleClick3()
 
                                             }}
                                             className='shop-btn' color='success' variant='outlined' size="large">
@@ -124,9 +165,6 @@ const DetailPage = () => {
                                         </Button>
                                     )
                                 }
-                                <Link to='/order' >
-                                    <Button>Заказать сейчас</Button>
-                                </Link>
                             </div>
                         </div>
                     ) : (

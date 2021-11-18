@@ -1,15 +1,11 @@
 import "./diana.css";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import React from "react";
-import GoogleIcon from "@mui/icons-material/Google";
-
 import { useAuth } from "../contexts/AuthContext";
 import "toastify-js/src/toastify.css";
 import Toastify from "toastify-js";
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
-
 export default function Registerpage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -27,6 +23,7 @@ export default function Registerpage() {
             View Form
           </label> */}
         <div class="containerDi">
+
           <Link to="/">
             <label
               for="show"
@@ -35,6 +32,7 @@ export default function Registerpage() {
             ></label>
           </Link>
           <div class="text">Sign up Form</div>
+
 
           {/* form///// */}
           <form
@@ -53,8 +51,7 @@ export default function Registerpage() {
               setIsSubmitting(true);
               register(email, password)
                 .then((response) => {
-                  console.log(response);
-                  navigate("/");
+                  navigate(-1);
                 })
                 .catch((error) => {
                   console.log(error.message);
@@ -70,36 +67,36 @@ export default function Registerpage() {
                 .finally(() => setIsSubmitting(false));
             }}
 
-            // action="#"
+          // action="#"
           >
             <div class="data">
-              <label>Email or Phone</label>
+              <label>Ваш email</label>
               <input
                 // value="email"
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
                 type="email"
-                // required
+              // required
               />
             </div>
             <div class="data">
-              <label>Password</label>
+              <label>Введите пароль</label>
               <input
                 // value="password"
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
                 type="password"
                 autoComplete="password"
-                // required
+              // required
               />
             </div>
 
             <div class="forgot-pass">
-              <a href="#">Forgot Password?</a>
+
             </div>
             <div class="btn">
               <div class="inner"></div>
-              <button type="submit">sign up</button>
+              <button type="submit">зарегистрироваться</button>
             </div>
             {/* google sign in  */}
             <div class="btn">
@@ -120,12 +117,12 @@ export default function Registerpage() {
                   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                   alt=""
                 />
-                <span className="span1">sign in with Google</span>
+                <span className="span1">Войдите с помощью Google аккаунта</span>
               </button>
             </div>
 
             <div class="signup-link">
-              already a member? <Link to="/login">login</Link>
+              уже зарегистрированы? <Link to="/login">Войти</Link>
             </div>
           </form>
 

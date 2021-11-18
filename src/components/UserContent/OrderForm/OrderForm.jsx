@@ -1,33 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './orderForm.css'
+import { useNavigate } from 'react-router';
+import { Button } from '@mui/material'
 const OrderForm = () => {
+    const navigate = useNavigate()
     return (
 
         <main className='order-main' >
 
-            <form className='order-form' action="#" >
+            <form onSubmit={() => {
+                navigate('/pay')
+            }} className='order-form' action="#" >
 
                 <h1>Адресс доставки</h1>
 
                 <section>
                     <label for="name">Ваше имя</label>
-                    <input id="name" name="name" autocomplete="name" maxlength="100" pattern="[\p{L} \-\.]+" required />
+                    <input required id="name" name="name" autocomplete="name" maxlength="100" pattern="[\p{L} \-\.]+" />
                 </section>
 
 
                 <section>
                     <label for="address-line1">Адресс</label>
-                    <input required="" autocomplete="address-line1" id="address-line1" name="address-line1" />
+                    <input required autocomplete="address-line1" id="address-line1" name="address-line1" />
                 </section>
 
 
                 <section>
                     <label for="postal-code">ZIP или почтовый индекс</label>
-                    <input id="postal-code" name="postal-code" autocomplete="postal-code" maxlength="20" />
+                    <input required id="postal-code" name="postal-code" autocomplete="postal-code" maxlength="20" />
                 </section>
 
-                <section id="country-region">
+                <section required id="country-region">
                     <label for="country">Страна или регион</label>
                     <select id="country" name="country" autocomplete="country" enterkeyhint="done" required>
                         <option selected value="SPACER"> </option>
@@ -288,9 +293,13 @@ const OrderForm = () => {
                     <input id="tel" name="tel" autocomplete="tel" type="tel" maxlength="30" pattern="[\d \-\+]+" required />
                 </section>
 
-                <Link to='/pay' >
-                    <button id="save-address">Оплатить сейчас</button>
-                </Link>
+                <button type='submit' id="save-address">Оплатить сейчас</button>
+
+                <Button id='order-cancel-btn' onClick={() => {
+                    navigate('/products')
+                }} >Отменить</Button>
+
+
             </form>
 
         </main>

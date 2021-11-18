@@ -36,32 +36,34 @@ const AllProducts = () => {
       <MyNavbar />
       <Container fixed className="card-container">
         {/*  */}
-        <FormControl className="radio-btn" component="fieldset">
-          <FormLabel component="legend">Тип</FormLabel>
-          <RadioGroup
-            onChange={(e) => filterProducts("type", e.target.value)}
-            row
-            aria-label="type"
-            name="row-radio-buttons-group"
-          >
-            <FormControlLabel
-              value="диван"
-              control={<Radio />}
-              label="Диваны"
-            />
-            <FormControlLabel
-              value="кресло"
-              control={<Radio />}
-              label="Кресла"
-            />
-            <FormControlLabel value="стол" control={<Radio />} label="Столы" />
-            <FormControlLabel
-              value="кровать"
-              control={<Radio />}
-              label="Кровати"
-            />
-          </RadioGroup>
-        </FormControl>
+        <div className='radio-content' >
+          <FormControl className="radio-btn" component="fieldset">
+            <FormLabel component="legend">Тип</FormLabel>
+            <RadioGroup
+              onChange={(e) => filterProducts("type", e.target.value)}
+              row
+              aria-label="type"
+              name="row-radio-buttons-group"
+            >
+              <FormControlLabel
+                value="диван"
+                control={<Radio />}
+                label="Диваны"
+              />
+              <FormControlLabel
+                value="кресло"
+                control={<Radio />}
+                label="Кресла"
+              />
+              <FormControlLabel value="стол" control={<Radio />} label="Столы" />
+              <FormControlLabel
+                value="кровать"
+                control={<Radio />}
+                label="Кровати"
+              />
+            </RadioGroup>
+          </FormControl>
+        </div>
         {/*  */}
         <Grid container>
           {products ? (

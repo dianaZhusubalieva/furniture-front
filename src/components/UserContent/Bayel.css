@@ -46,13 +46,14 @@
 }
 
 .card-btn:hover {
-    background-color: #000 !important;
-    color: #fff !important;
+    background-color: #F0F0F0 !important;
+    color: #262626 !important;
 }
 
 .css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
-    border: 1px solid #000 !important;
+    border: 1px solid #A8A8A8 !important;
     transition-duration: 1.3s !important;
+    color: #262626 !important;
 }
 
 .detail-page {
@@ -77,7 +78,6 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 30px 0;
 }
 
 .details .big-img {
@@ -99,6 +99,17 @@
     max-width: 500px;
     min-width: 290px;
     margin: 25px;
+}
+
+/* order btn */
+
+.order-btn {
+    margin-top: 10px !important;
+    margin-left: 140px !important;
+}
+
+.order-btn {
+    background-color: #DC143C !important;
 }
 
 .box .row {
@@ -166,8 +177,13 @@
 
 /* Radio btn */
 
+.radio-content {
+    display: flex;
+    justify-content: center;
+}
+
 .radio-btn {
-    margin-top: 200px;
+    text-align: center;
 }
 
 /* Pagination */
@@ -247,6 +263,51 @@
 .tr-succ h4 {
     margin-left: 172px;
     margin-top: 20px;
+}
+
+/* content 4 */
+
+.del-m {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #EFEFEF;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.del-m h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.del-m img {
+    width: 50px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.del-m p {
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+}
+
+.del-block {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.del-items {
+    text-align: center;
+}
+
+/*  */
+
+@media screen and (max-width: 515px) {
+    .order-btn {
+        margin-left: 0 !important;
+    }
 }
 
 @media screen and (max-width: 500px) {
