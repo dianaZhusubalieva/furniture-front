@@ -13,22 +13,21 @@ import MyContent5 from "../components/MainPageContent/MyContent5";
 // import MyContent6 from "../components/MainPageContent/MyContent6";
 
 import DelMethods from "../components/MainPageContent/DelMethods";
-
+import AboutUs from "../components/MainPageContent/AboutUs";
 
 const MainPage = () => {
   return (
     <>
       <MainPageNavbar />
       <MyHeader />
-      {/* <EmptyDiv /> */}
+
       <MyContent1 />
       <MyContent2 />
 
       <MyContent4 />
+      <AboutUs />
 
       <MyContent5 />
-      {/* <MyContent6 /> */}
-
 
       <DelMethods />
 

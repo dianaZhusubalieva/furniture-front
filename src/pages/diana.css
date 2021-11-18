@@ -1,3 +1,5 @@
+@import url(//db.onlinewebfonts.com/c/af1f0c1545d9c721e2e4d0fdae598f7d?family=Burgess);
+
 .adminPage {
     margin-top: 90px;
 }
@@ -259,9 +261,9 @@ form .signup-link a:hover {
     font-family: 'Josefin Sans';
     font-weight: 300;
     padding-bottom: 6px;
-    
+
     cursor: pointer;
-    color: rgba(59, 59, 59, 0.705);
+    color: #3f3f3f;
     border-bottom: 1px solid #606060
 }
 
@@ -287,9 +289,10 @@ form .signup-link a:hover {
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 70px auto;
-    
+
 }
-.mainCard{
+
+.mainCard {
     background-color: rgb(219, 219, 219);
 }
 
@@ -344,6 +347,10 @@ form .signup-link a:hover {
         /* On small screens, we are no longer using row direction but column */
         flex-direction: column;
     }
+
+    .containerDi {
+        width: unset;
+    }
 }
 
 .video {
@@ -357,6 +364,50 @@ form .signup-link a:hover {
     background: url("https://wallpaperaccess.com/full/765778.png")
 } */
 
-.best{
+.best {
     margin: 40px auto;
+}
+
+/* delivery block */
+.del-block {
+    font-family: 'Montserrat', sans-serif;
+    color: #303030;
+    font-weight: 200;
+
+}
+
+/* about us div */
+
+.about-us {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #303030;
+
+
+}
+
+.about-us-text {
+    font-family: 'Burgess';
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: #303030;
+    line-height: 40px
+    
+
+
+
+}
+
+.main-about {
+    
+    background-color: #fff
+}
+.main2{
+    margin: 15px 45px;
+
 }

@@ -25,7 +25,6 @@ import { ShoppingCart } from "@mui/icons-material";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 import { useAuth } from "../contexts/AuthContext";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 import Favorites from "./UserContent/Favorites";
 const Search = styled("div")(({ theme }) => ({
