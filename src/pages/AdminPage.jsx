@@ -10,9 +10,13 @@ const AdminPage = () => {
     <>
       <MyNavbar />
       <div className="adminPage">
-        <Link to="/admin/add">
-          <Button>Add Product</Button>
+        <Link to="/products">
+          <Button style={{ marginRight: '40px' }} >To Products</Button>
         </Link>
+        <Link to="/admin/add">
+          <Button variant='outlined' >Add Product</Button>
+        </Link>
+
         <div>
           <BasicTable />
         </div>
