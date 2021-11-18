@@ -18,16 +18,16 @@ export default function Registerpage() {
     <>
       <div className="bodyRegister">
 
-        <div class="containerDi">
+        <div className="containerDi">
 
           <Link to="/">
             <label
               for="show"
-              class="close-btn fas fa-times"
+              className="close-btn fas fa-times"
               title="close"
             ></label>
           </Link>
-          <div class="text">Sign Up </div>
+          <div className="text">Sign Up </div>
 
 
           <form
@@ -58,7 +58,7 @@ export default function Registerpage() {
 
           // action="#"
           >
-            <div class="data">
+            <div className="data">
               <label>Email</label>
               <input
                 // value="email"
@@ -68,7 +68,7 @@ export default function Registerpage() {
               // required
               />
             </div>
-            <div class="data">
+            <div className="data">
               <label>Write your password</label>
               <input
                 // value="password"
@@ -80,21 +80,20 @@ export default function Registerpage() {
               />
             </div>
 
-            <div class="forgot-pass">
+            <div className="forgot-pass">
 
             </div>
-            <div class="btn">
-              <div class="inner"></div>
+            <div className="btn">
+              <div className="inner"></div>
               <button type="submit">sign up</button>
             </div>
             {/* google sign in  */}
-            <div class="btn">
-              <div class="inner"></div>
+            <div className="btn">
+              <div className="inner"></div>
               <button
                 onClick={() =>
                   signInWithGoogle()
                     .then((user) => {
-                      console.log(user);
                     })
                     .catch((e) => console.log(e.message))
                 }
@@ -102,7 +101,7 @@ export default function Registerpage() {
                 <img
                   width="20px"
                   height="20px"
-                  class="google-icon"
+                  className="google-icon"
                   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                   alt=""
                 />
@@ -110,7 +109,7 @@ export default function Registerpage() {
               </button>
             </div>
 
-            <div class="signup-link">
+            <div className="signup-link">
               Already a member? <Link to="/login">Loge In</Link>
             </div>
           </form>

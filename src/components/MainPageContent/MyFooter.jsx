@@ -16,83 +16,83 @@ const MyFooter = () => {
   return (
     <>
       <footer>
-        <div class="footer-wrap">
-          <div class="widgetFooter">
-            <h4 class="uppercase">useful links</h4>
+        <div className="footer-wrap">
+          <div className="widgetFooter">
+            <h4 className="uppercase">useful links</h4>
             <ul id="footerUsefulLink">
               <li title="About US">
-                <span class="usefulLinksIcons">
-                  <i class="far fa-id-card"></i>
+                <span className="usefulLinksIcons">
+                  <i className="far fa-id-card"></i>
                 </span>
                 <a>&nbsp;About us</a>
               </li>
               <li title="Our Team">
-                <span class="usefulLinksIcons">
-                  <i class="far fa-handshake"></i>
+                <span className="usefulLinksIcons">
+                  <i className="far fa-handshake"></i>
                 </span>
                 <a>&nbsp;Our team</a>
               </li>
               <li title="Gallery">
-                <span class="usefulLinksIcons">
-                  <i class="far fa-images"></i>
+                <span className="usefulLinksIcons">
+                  <i className="far fa-images"></i>
                 </span>
                 <a>&nbsp;Gallery</a>
               </li>
               <li title="Contact Us">
-                <span class="usefulLinksIcons">
-                  <i class="far fa-envelope"></i>
+                <span className="usefulLinksIcons">
+                  <i className="far fa-envelope"></i>
                 </span>
                 <a>&nbsp;Send email</a>
               </li>
             </ul>
           </div>
-          <div class="widgetFooter" id="footerLogo">
+          <div className="widgetFooter" id="footerLogo">
             <p className="footerText" style={{ paddingBottom: "8px" }}>
               we're here to help
             </p>
 
             <ul id="footerUsefulLink">
               <li title="Contact Us">
-                <span class="usefulLinksIcons">
-                  <i class="far fa-envelope"></i>
+                <span className="usefulLinksIcons">
+                  <i className="far fa-envelope"></i>
                 </span>
                 <a>&nbsp;Contact us</a>
               </li>
             </ul>
           </div>
 
-          <div class="widgetFooter">
-            <h4 class="uppercase">Social media links</h4>
+          <div className="widgetFooter">
+            <h4 className="uppercase">Social media links</h4>
             <ul id="footerMediaLinks">
-              <li class="media1" title="Facebook">
-                <span class="mediaLinksIcons fb">
-                  <i class="fab fa-facebook-square"></i>
+              <li className="media1" title="Facebook">
+                <span className="mediaLinksIcons fb">
+                  <i className="fab fa-facebook-square"></i>
                 </span>
-                <a class="fb">&nbsp;facebook</a>
+                <a className="fb">&nbsp;facebook</a>
               </li>
-              <li class="media2" title="Twitter">
-                <span class="mediaLinksIcons twit">
-                  <i class="fab fa-twitter-square"></i>
+              <li className="media2" title="Twitter">
+                <span className="mediaLinksIcons twit">
+                  <i className="fab fa-twitter-square"></i>
                 </span>
-                <a class="twit">&nbsp;Twitter</a>
+                <a className="twit">&nbsp;Twitter</a>
               </li>
-              <li class="media3" title="Instagram">
-                <span class="mediaLinksIcons insta">
-                  <i class="fab fa-instagram"></i>
+              <li className="media3" title="Instagram">
+                <span className="mediaLinksIcons insta">
+                  <i className="fab fa-instagram"></i>
                 </span>
-                <a class="insta">&nbsp;instagram</a>
+                <a className="insta">&nbsp;instagram</a>
               </li>
-              <li class="media4" title="Github">
-                <span class="mediaLinksIcons git">
-                  <i class="fab fa-github-alt"></i>
+              <li className="media4" title="Github">
+                <span className="mediaLinksIcons git">
+                  <i className="fab fa-github-alt"></i>
                 </span>
-                <a class="git">&nbsp;Github</a>
+                <a className="git">&nbsp;Github</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="footerCopy">
-          <div class="inb">
+        <div className="footerCopy">
+          <div className="inb">
             <p>
               Copyrights<sup>&copy;</sup> 2021 Makers. Developed with{" "}
               <img style={{ width: '20px' }} src="https://cdn-icons-png.flaticon.com/512/1077/1077086.png" alt="" />

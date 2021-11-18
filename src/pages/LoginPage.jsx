@@ -18,17 +18,17 @@ export default function Registerpage() {
   return (
     <>
       <div className="bodyRegister">
-        <div class="containerDi">
+        <div className="containerDi">
 
           <Link to="/">
             <label
               for="show"
-              class="close-btn fas fa-times"
+              className="close-btn fas fa-times"
               title="close"
             ></label>
           </Link>
 
-          <div class="text">Login Form</div>
+          <div className="text">Login Form</div>
 
           <form
             onSubmit={async (e) => {
@@ -56,7 +56,7 @@ export default function Registerpage() {
                 .finally(() => setIsSubmitting(false));
             }}
           >
-            <div class="data">
+            <div className="data">
               <label>Email</label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
@@ -64,7 +64,7 @@ export default function Registerpage() {
                 type="email"
               />
             </div>
-            <div class="data">
+            <div className="data">
               <label>Password</label>
               <input
                 onChange={(e) => setPassword(e.target.value)}
@@ -73,16 +73,16 @@ export default function Registerpage() {
                 autoComplete="password"
               />
             </div>
-            <div class="forgot-pass">
+            <div className="forgot-pass">
               <Link to="/forgot">
                 <a href="#">Forgot password?</a>
               </Link>
             </div>
-            <div class="btn">
-              <div class="inner"></div>
+            <div className="btn">
+              <div className="inner"></div>
               <button type="submit">Loge In</button>
             </div>
-            <div class="signup-link">
+            <div className="signup-link">
               Don't have an account? <Link to="/register">Sign Up</Link>
             </div>
           </form>

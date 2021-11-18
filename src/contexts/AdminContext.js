@@ -25,7 +25,7 @@ const AdminContextProvider = (props) => {
   //! CREATE
 
   const addProduct = async (product) => {
-    console.log(product);
+
     try {
       const { data } = await axios.post(API, product);
       getProducts();

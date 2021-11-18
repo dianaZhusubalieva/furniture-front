@@ -17,18 +17,17 @@ export default function ForgotPasswordPage() {
   return (
     <>
       <div className="bodyRegister">
-        <div class="containerDi">
+        <div className="containerDi">
           <Link to="/login">
             <label
               for="show"
-              class="close-btn fas fa-times"
+              className="close-btn fas fa-times"
               title="close"
             ></label>
           </Link>
 
-          <div class="text">Forgot password</div>
+          <div className="text">Forgot password</div>
 
-          {/* form///// */}
           <form
             onSubmit={async (e) => {
               e.preventDefault();
@@ -55,7 +54,7 @@ export default function ForgotPasswordPage() {
               }
             }}
           >
-            <div class="data">
+            <div className="data">
               <label>Email or Phone</label>
               <input
                 value={email}
@@ -65,15 +64,15 @@ export default function ForgotPasswordPage() {
               />
             </div>
 
-            <div class="btn">
-              <div class="inner"></div>
+            <div className="btn">
+              <div className="inner"></div>
 
               <button type="submit">submit</button>
             </div>
             <span className="or">or</span>
 
-            <div class="btn">
-              <div class="inner"></div>
+            <div className="btn">
+              <div className="inner"></div>
               <Link to="/login">
                 <button type="submit">login</button>
               </Link>
