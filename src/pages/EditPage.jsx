@@ -31,7 +31,7 @@ const EditPage = () => {
     useContext(adminContext);
   useEffect(() => {
     getProductToEdit(params.id);
-  }, []);
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
   const navigate = useNavigate();
   return (
     <>

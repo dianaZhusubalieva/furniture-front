@@ -16,7 +16,7 @@ const CartPage = () => {
         useContext(clientContext);
     useEffect(() => {
         getCart();
-    }, []);
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
     return (
         <>
             <MyNavbar />
@@ -100,7 +100,7 @@ const CartPage = () => {
                         <>
                             <h2>Your cart is empty</h2>
                             <Link to='/products' >
-                                <Button variant='outlined' >Go Back</Button>
+                                <Button variant='outlined' >To products</Button>
                             </Link>
                         </>
                     )

@@ -6,7 +6,7 @@ const TransactionSuccess = () => {
     return (
         <div className='tr-succ'  >
             <div >
-                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" />
+                <img alt='' src="https://cdn-icons-png.flaticon.com/512/190/190411.png" />
                 <h1>Transaction Successfuly!</h1>
                 <h4>Thank's for your billing</h4>
                 <Link to='/products' >

@@ -12,7 +12,7 @@ export default function Registerpage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // eslint-disable-line
 
   const { login } = useAuth();
   return (
@@ -22,7 +22,7 @@ export default function Registerpage() {
 
           <Link to="/">
             <label
-              for="show"
+              htmlFor="show"
               className="close-btn fas fa-times"
               title="close"
             ></label>
@@ -75,7 +75,7 @@ export default function Registerpage() {
             </div>
             <div className="forgot-pass">
               <Link to="/forgot">
-                <a href="#">Forgot password?</a>
+                <p href="#/">Forgot password?</p>
               </Link>
             </div>
             <div className="btn">
@@ -88,6 +88,7 @@ export default function Registerpage() {
           </form>
 
         </div>
+
       </div>
     </>
   );

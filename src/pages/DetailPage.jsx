@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router-dom';
 import { clientContext } from '../contexts/ClientContext';
 import MyNavbar from "../components/MyNavbar";
 import { Button } from '@mui/material';
@@ -17,7 +17,7 @@ const DetailPage = () => {
     const params = useParams()
     useEffect(() => {
         getDetails(params.id)
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
     // snackbar
     const [open, setOpen] = React.useState(false);
 
@@ -117,7 +117,9 @@ const DetailPage = () => {
                                 </div>
                                 <p><strong>Model : </strong>{detailProduct.model}</p>
                                 <p><strong>Description : </strong>{detailProduct.description}</p>
-
+                                <Link to='/products' >
+                                    <Button style={{ display: 'block' }} >Back to products</Button>
+                                </Link>
                                 {
                                     checkProductInCart(detailProduct.id) ? (
                                         <Button
