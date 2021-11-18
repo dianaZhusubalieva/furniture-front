@@ -205,6 +205,11 @@ code {
   }
 }
 
+/* footer a */
+.footer-wrap a {
+  color: white
+}
+
 @media screen and (max-width: 370px) {
   .c1-text {
     width: unset;

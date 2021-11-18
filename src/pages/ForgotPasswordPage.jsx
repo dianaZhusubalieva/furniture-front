@@ -1,6 +1,5 @@
 import "./diana.css";
 import { useState } from "react";
-import { useNavigate, navigate } from "react-router-dom";
 import React from "react";
 
 import { useAuth } from "../contexts/AuthContext";
@@ -9,7 +8,7 @@ import Toastify from "toastify-js";
 import { Link } from "react-router-dom";
 
 export default function ForgotPasswordPage() {
-  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
 
   const { forgotPassword } = useAuth();
@@ -20,7 +19,7 @@ export default function ForgotPasswordPage() {
         <div className="containerDi">
           <Link to="/login">
             <label
-              for="show"
+              htmlFor="show"
               className="close-btn fas fa-times"
               title="close"
             ></label>

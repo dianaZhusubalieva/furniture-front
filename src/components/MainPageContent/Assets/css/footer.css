@@ -8,7 +8,7 @@ footer {
   min-height: 300px;
   max-height: auto;
   background-color: rgba(39, 38, 38, 0.726);
-  margin-top: 10px;
+
   clear: both;
 }
 
@@ -67,7 +67,7 @@ ul#footerMediaLinks li:hover span.git, ul#footerMediaLinks li:hover a.git {
 
 .footerText {
   width: 60%;
-  
+
   /* margin: 25% ; */
   font-size: 35px;
   color: white;
@@ -89,14 +89,17 @@ div.footerCopy {
     width: 100%;
     padding: 0;
   }
+
   .widgetFooter:not(:nth-of-type(2)) {
     width: calc(90%/2);
     text-align: center;
     font-size: 0.9em;
   }
+
   .widgetFooter:nth-of-type(2) {
     display: none;
   }
+
   div.footerCopy {
     font-size: 0.8em;
   }
@@ -112,39 +115,48 @@ div.footerCopy {
   footer {
     min-height: auto;
   }
+
   .widgetFooter:not(:nth-of-type(2)) {
     width: 100%;
     padding: 0;
     text-align: center;
   }
+
   ul#footerUsefulLink, ul#footerMediaLinks {
     display: flex;
   }
+
   ul#footerUsefulLink li, ul#footerMediaLinks li {
     float: left;
     flex: 1;
     text-align: center;
     font-size: 1.5em;
   }
+
   ul#footerUsefulLink li a, ul#footerMediaLinks li a {
     display: none;
   }
+
   ul#footerUsefulLink li:hover, ul#footerUsefulLink li:hover .usefulLinksIcons, ul#footerUsefulLink li:hover a {
     color: white;
     background-color: #00CED1;
   }
+
   ul#footerMediaLinks li.media1:hover, ul#footerMediaLinks li:hover span.fb, ul#footerMediaLinks li:hover a.fb {
     background-color: #3b5998;
     color: white;
   }
+
   ul#footerMediaLinks li.media2:hover, ul#footerMediaLinks li:hover span.twit, ul#footerMediaLinks li:hover a.twit {
     background-color: #1DA1F2;
     color: white;
   }
+
   ul#footerMediaLinks li.media3:hover, ul#footerMediaLinks li:hover span.insta, ul#footerMediaLinks li:hover a.insta {
     background-color: #ffc838;
     color: white;
   }
+
   ul#footerMediaLinks li.media4:hover, ul#footerMediaLinks li:hover span.git, ul#footerMediaLinks li:hover a.git {
     background-color: #f1502f;
     color: white;

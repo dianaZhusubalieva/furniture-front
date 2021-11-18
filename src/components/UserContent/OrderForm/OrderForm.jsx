@@ -15,26 +15,26 @@ const OrderForm = () => {
                 <h1>Deleviery address</h1>
 
                 <section>
-                    <label for="name">Your name</label>
-                    <input required id="name" name="name" autocomplete="name" maxlength="100" pattern="[\p{L} \-\.]+" />
+                    <label htmlFor="name">Your name</label>
+                    <input required id="name" name="name" autoComplete="name" maxLength="100" pattern="[\p{L} \-\.]+" />
                 </section>
 
 
                 <section>
-                    <label for="address-line1">Address</label>
-                    <input required autocomplete="address-line1" id="address-line1" name="address-line1" />
+                    <label htmlFor="address-line1">Address</label>
+                    <input required autoComplete="address-line1" id="address-line1" name="address-line1" />
                 </section>
 
 
                 <section>
-                    <label for="postal-code">ZIP or postal code</label>
-                    <input required id="postal-code" name="postal-code" autocomplete="postal-code" maxlength="20" />
+                    <label htmlFor="postal-code">ZIP or postal code</label>
+                    <input required id="postal-code" name="postal-code" autoComplete="postal-code" maxLength="20" />
                 </section>
 
                 <section required id="country-region">
-                    <label for="country">Country or Region</label>
-                    <select id="country" name="country" autocomplete="country" enterkeyhint="done" required>
-                        <option selected value="SPACER"> </option>
+                    <label htmlFor="country">Country or Region</label>
+                    <select id="country" name="country" autoComplete="country" enterKeyHint="done" required>
+                        <option value="SPACER"> </option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
                         <option value="AL">Albania</option>
@@ -288,8 +288,8 @@ const OrderForm = () => {
                 </section>
 
                 <section>
-                    <label for="tel">Phone number</label>
-                    <input id="tel" name="tel" autocomplete="tel" type="tel" maxlength="30" pattern="[\d \-\+]+" required />
+                    <label htmlFor="tel">Phone number</label>
+                    <input id="tel" name="tel" autoComplete="tel" type="tel" maxLength="30" pattern="[\d \-\+]+" required />
                 </section>
 
                 <button type='submit' id="save-address">Buy now</button>

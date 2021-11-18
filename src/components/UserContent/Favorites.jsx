@@ -21,7 +21,7 @@ const Favorites = ({ open, handleClose }) => {
     const { addAndDeleteProductInCart, checkProductInCart, favorites, addAndDeleteProductInFavorites, getFavorite } = useContext(clientContext)
     useEffect(() => {
         getFavorite()
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div>
             <Modal
@@ -31,28 +31,28 @@ const Favorites = ({ open, handleClose }) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography component={'span'} style={{ textAlign: 'center' }} id="modal-modal-title" variant="h6" component="h2"> Favorites
+                    <Typography component={'span'} style={{ textAlign: 'center' }} id="modal-modal-title" variant="h6" > Favorites
                         {
                             favorites ? (
                                 favorites.favorites.length > 0 ? (
                                     favorites.favorites.map((item) => (
 
                                         <div key={item.item.id} className="favorite" >
-                                            <img width='100px' src={item.item.image} />
-                                            <span >{item.item.name}</span>
+                                            <img alt='' width='100px' src={item.item.image} />
+                                            <span style={{ marginRight: '50px', marginLeft: '30px' }} >{item.item.name}</span>
 
-                                            <Button onClick={() => {
+                                            <Button style={{ marginRight: '25px' }} variant='outlined' color='error' onClick={() => {
                                                 addAndDeleteProductInFavorites
                                                     (item.item)
                                                 getFavorite()
-                                            }
-                                            }
+                                            }}
                                             >X</Button>
                                             <Button
                                                 onClick={() => addAndDeleteProductInCart(item.item)}
                                                 className='shop-btn' color={checkProductInCart(item.item.id) ? 'error' : 'success'} variant='outlined' size="large">
                                                 <ShoppingCartIcon color={checkProductInCart(item.item.id) ? 'error' : ''} />
                                             </Button>
+
                                             <br />
                                         </div>
 

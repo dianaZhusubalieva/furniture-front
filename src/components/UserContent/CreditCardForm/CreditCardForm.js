@@ -156,7 +156,7 @@ const CreditCardForm = (props) => {
         </div>
         <div className="btn-form">
           <button
-            type="submit"
+
             className="btnSubmit" type="submit">
             Submit
           </button>

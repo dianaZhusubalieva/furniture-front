@@ -17,10 +17,10 @@ const AllProducts = () => {
   const { products, getProducts, currentPosts } = useContext(clientContext);
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
   let obj = new URLSearchParams(window.location.search);
   let navigate = useNavigate();
-  const [typeValue, setTypeValue] = useState("");
+  const [typeValue, setTypeValue] = useState("")// eslint-disable-line
   const filterProducts = (key, value) => {
     obj.set(key, value);
     let newUrl = `${window.location.pathname}?${obj.toString()}`;
@@ -30,12 +30,12 @@ const AllProducts = () => {
   };
   useEffect(() => {
     setTypeValue(obj.get("type"));
-  }, [obj]);
+  }, [obj])
   return (
     <>
       <MyNavbar />
       <Container fixed className="card-container">
-        {/*  */}
+
         <div className='radio-content' >
           <FormControl className="radio-btn" component="fieldset">
             <FormLabel component="legend">Type of Furniture</FormLabel>
@@ -64,7 +64,6 @@ const AllProducts = () => {
             </RadioGroup>
           </FormControl>
         </div>
-        {/*  */}
         <Grid container>
           {products ? (
             currentPosts.map((item) => <UserCards key={item.id} item={item} />)

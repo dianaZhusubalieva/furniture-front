@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { API } from "../helpers/const";
 
 export const adminContext = React.createContext();
@@ -27,7 +27,7 @@ const AdminContextProvider = (props) => {
   const addProduct = async (product) => {
 
     try {
-      const { data } = await axios.post(API, product);
+      await axios.post(API, product);
       getProducts();
     } catch (e) {
       console.log(e);
@@ -66,7 +66,7 @@ const AdminContextProvider = (props) => {
 
   const saveEditedProduct = async (editedProduct) => {
     try {
-      const response = await axios.patch(
+      await axios.patch(
         `${API}/${editedProduct.id}`,
         editedProduct
       );

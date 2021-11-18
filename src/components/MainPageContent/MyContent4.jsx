@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MyContent3 = () => {
   return (
     <div className="c4-img">
-      <Container static className="best">
+      <Container className="best">
         <div className="bestsellers">
           <h2>Best Sellers</h2>
         </div>

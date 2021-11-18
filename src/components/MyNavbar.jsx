@@ -17,7 +17,7 @@ import { clientContext } from "../contexts/ClientContext";
 import { useNavigate, Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
 import { ShoppingCart } from "@mui/icons-material";
-
+import LogoutIcon from '@mui/icons-material/Logout';
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 import { useAuth } from "../contexts/AuthContext";
@@ -168,9 +168,9 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Link to="/cart">
+      <Link to="/cart">
+        <MenuItem>
+          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge
               style={{ color: "black" }}
               badgeContent={productsCountInCart}
@@ -178,11 +178,14 @@ export default function PrimarySearchAppBar() {
             >
               <ShoppingCart />
             </Badge>
-          </Link>
-        </IconButton>
-        <p>Cart</p>
-      </MenuItem>
-      <MenuItem>
+          </IconButton>
+          <p style={{ color: '#1a1a1a' }} >Cart</p>
+        </MenuItem>
+      </Link>
+      <MenuItem onClick={() => {
+        handleOpen();
+        getFavorite();
+      }}>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -190,10 +193,7 @@ export default function PrimarySearchAppBar() {
         >
           <Badge badgeContent={productsCountInFavorites} color="error">
             <BookmarkBorderIcon
-              onClick={() => {
-                handleOpen();
-                getFavorite();
-              }}
+
             />
           </Badge>
         </IconButton>
@@ -296,18 +296,16 @@ export default function PrimarySearchAppBar() {
               >
                 {currentUser ? (
                   <>
-                    <Button onClick={logout}>
-                      <h6 className="text3">{currentUser.email}</h6>
-                      <img src={IMG} alt="" />
-                    </Button>
+                    <p style={{ fontSize: '15px' }} className="text3">{currentUser.email}</p>
+                    <LogoutIcon onClick={logout} />
                   </>
                 ) : (
                   <Link to="/register">
-                    <Button>
-                      <AccountCircle
-                        style={{ color: "rgba(169, 169, 169, 0.748)" }}
-                      />
-                    </Button>
+
+                    <AccountCircle
+                      style={{ color: "rgba(169, 169, 169, 0.748)" }}
+                    />
+
                   </Link>
                 )}
               </IconButton>

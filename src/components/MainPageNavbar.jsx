@@ -19,8 +19,7 @@ import IMG from "../helpers/images/logout.png";
 
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Favorites from "./UserContent/Favorites";
-
-const Search = styled("div")(({ theme }) => ({
+styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -35,8 +34,7 @@ const Search = styled("div")(({ theme }) => ({
     width: "auto",
   },
 }));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
+styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
   position: "absolute",
@@ -46,7 +44,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
+styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
@@ -59,7 +57,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-
 export default function PrimarySearchAppBar() {
   const { currentUser, logout, adminEmail } = useAuth();
 
@@ -147,9 +144,9 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Link to="/cart">
+      <Link to="/cart">
+        <MenuItem>
+          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge
               style={{ color: "black" }}
               badgeContent={productsCountInCart}
@@ -157,23 +154,21 @@ export default function PrimarySearchAppBar() {
             >
               <ShoppingCart />
             </Badge>
-          </Link>
-        </IconButton>
-        <p>Cart</p>
-      </MenuItem>
-      <MenuItem>
+          </IconButton>
+          <p style={{ color: '#1a1a1a' }} >Cart</p>
+        </MenuItem>
+      </Link>
+      <MenuItem onClick={() => {
+        handleOpen();
+        getFavorite();
+      }}>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
           <Badge badgeContent={productsCountInFavorites} color="error">
-            <BookmarkBorderIcon
-              onClick={() => {
-                handleOpen();
-                getFavorite();
-              }}
-            />
+            <BookmarkBorderIcon />
           </Badge>
         </IconButton>
         <p>Favorites</p>

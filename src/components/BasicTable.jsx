@@ -17,7 +17,7 @@ export default function BasicTable() {
     React.useContext(adminContext);
   React.useEffect(() => {
     getProducts();
-  }, []);
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
       {products ? (

@@ -18,23 +18,23 @@ const DelMethods = () => {
         </h2>
         <div className="del-block">
           <div className="del-items">
-            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/pricing.svg" />
+            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/pricing.svg" alt="" />
             <p>High quality design with low price.</p>
           </div>
           <div className="del-items">
-            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/home-trial.svg" />
+            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/home-trial.svg" alt="" />
             <p>Try 30 days at home.</p>
           </div>
           <div className="del-items">
-            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/shipping.svg" />
+            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/shipping.svg" alt="" />
             <p> Fast and free delivery to your house.</p>
           </div>
           <div className="del-items">
-            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/swatches.svg" />
+            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/swatches.svg" alt="" />
             <p>Ready designs make a choice easier </p>
           </div>
           <div className="del-items">
-            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/chat.svg" />
+            <img src="https://s3-us-west-2.amazonaws.com/media.modloft.com/pages/home/benefits/chat.svg" alt="" />
             <p>we will help and support to choose right model.</p>
           </div>
         </div>

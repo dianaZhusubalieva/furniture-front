@@ -10,7 +10,7 @@ export default function Registerpage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)// eslint-disable-line
 
   const { register, signInWithGoogle } = useAuth();
 
@@ -22,7 +22,7 @@ export default function Registerpage() {
 
           <Link to="/">
             <label
-              for="show"
+              htmlFor="show"
               className="close-btn fas fa-times"
               title="close"
             ></label>
