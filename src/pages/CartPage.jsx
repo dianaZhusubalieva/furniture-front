@@ -21,6 +21,9 @@ const CartPage = () => {
         <>
             <MyNavbar />
             <div className="cart-page">
+                <Link to='/products' >
+                    <Button  >To products</Button>
+                </Link>
                 <h2>Cart</h2>
                 {cart ? (
                     cart.products.length > 0 ? (
@@ -69,6 +72,8 @@ const CartPage = () => {
                                                 </TableCell>
                                                 <TableCell align="right">
                                                     <Button
+                                                        variant='outlined'
+                                                        color='error'
                                                         onClick={() => {
                                                             addAndDeleteProductInCart(item.product1);
                                                             getCart()
@@ -88,7 +93,7 @@ const CartPage = () => {
                                             </TableCell>
                                             <TableCell colSpan={1} align="right">
                                                 <Link to="/order">
-                                                    <Button>Buy Now</Button>
+                                                    <Button variant="contained" color='success' >Buy Now</Button>
                                                 </Link>
                                             </TableCell>
                                         </TableRow>

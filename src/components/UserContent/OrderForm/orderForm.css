@@ -6,36 +6,7 @@
     border-style: dotted;
 }
 
-#order-cancel-btn {
-    background-color: #DC143C;
-    border-radius: 10px;
-    padding: 12px;
-}
 
-.order-form button {
-    background-color: black;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    color: #eee;
-    cursor: pointer;
-    font-size: 20px;
-    /* fallback */
-    font-size: var(--large-mobile-font-size);
-    font-weight: 400;
-    margin: 3px 0 0 20px;
-    flex-wrap: wrap;
-    padding: 14px;
-}
-
-.order-form button:disabled {
-    color: #888;
-    cursor: default;
-}
-
-.order-form button:not(:disabled):hover {
-    background-color: #333;
-    color: white;
-}
 
 .order-form div.explanation {
     font-size: 14px;
@@ -143,38 +114,47 @@
         /* fallback */
         font-size: var(--large-mobile-font-size);
     }
+
     .order-form div.explanation {
         font-size: 16px;
     }
+
     .order-form h1 {
         font-size: 36px;
         font-weight: 500;
     }
+
     .order-form input {
         font-size: 22px;
         /* fallback */
         font-size: var(--large-mobile-font-size);
     }
+
     .order-form label {
         font-size: 22px;
         /* fallback */
         font-size: var(--large-mobile-font-size);
     }
+
     .order-form p {
         font-weight: 400;
         line-height: 1.5em;
     }
+
     .order-form section {
         margin: 0 0 10px 0;
     }
+
     .order-form section:last-of-type {
         margin: 0 0 30px 0;
     }
+
     .order-form select {
         font-size: 22px;
         /* fallback */
         font-size: var(--large-mobile-font-size);
     }
+
     .order-form textarea {
         font-size: 22px;
         /* fallback */
@@ -183,37 +163,40 @@
 }
 
 @media (min-width: 500px) {
-    .order-form button {
-        font-size: 18px;
-        /* fallback */
-        font-size: var(--desktop-font-size);
-    }
+
+
     .order-form section#cc-exp-csc div:not(:last-child) {
         margin: 0 20px 0 0;
     }
+
     .order-form {
         margin: 0 0 20px 0;
         padding: 0 0 100px 0;
     }
+
     .order-form h1 {
         font-size: 36px;
         font-weight: 100;
         margin: 0 0 60px 0;
     }
+
     .order-form input {
         font-size: 18px;
         /* fallback */
         font-size: var(--desktop-font-size);
     }
+
     .order-form label {
         font-size: 18px;
         /* fallback */
         font-size: var(--desktop-font-size);
         margin: 0 0 6px 0;
     }
+
     .order-form section {
         margin: 0 0 35px 0;
     }
+
     .order-form section:last-of-type {
         margin: 0 0 60px 0;
     }

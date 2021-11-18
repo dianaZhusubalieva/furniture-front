@@ -292,9 +292,9 @@ const OrderForm = () => {
                     <input id="tel" name="tel" autoComplete="tel" type="tel" maxLength="30" pattern="[\d \-\+]+" required />
                 </section>
 
-                <button type='submit' id="save-address">Buy now</button>
+                <Button variant='contained' color='success' type='submit' >BUY NOW</Button>
 
-                <Button id='order-cancel-btn' onClick={() => {
+                <Button style={{ marginLeft: '30px' }} variant='contained' color='error' onClick={() => {
                     navigate('/products')
                 }} >Cancel</Button>
 
