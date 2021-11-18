@@ -30,26 +30,17 @@ export default function Registerpage() {
 
           <div class="text">Login Form</div>
 
-     
-
-          {/* form///// */}
           <form
             onSubmit={async (e) => {
               e.preventDefault();
 
               if (!email || !password) {
-                // Toastify({
-                //   text: "This is a toast",
-                //   className: "error",
-                //   style: {
-                //     background: "linear-gradient(to right, #00b09b, #96c93d)",
-                //   },
-                // }).showToast();
+
               }
               setIsSubmitting(true);
               login(email, password)
                 .then((response) => {
-                  navigate(-2)
+                  navigate('/')
                 })
                 .catch((error) => {
                   console.log(error.message);
@@ -66,7 +57,7 @@ export default function Registerpage() {
             }}
           >
             <div class="data">
-              <label>Ваш email</label>
+              <label>Email</label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
@@ -74,7 +65,7 @@ export default function Registerpage() {
               />
             </div>
             <div class="data">
-              <label>Введите пароль</label>
+              <label>Password</label>
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
@@ -84,21 +75,19 @@ export default function Registerpage() {
             </div>
             <div class="forgot-pass">
               <Link to="/forgot">
-                <a href="#">Забыли пароль?</a>
+                <a href="#">Forgot password?</a>
               </Link>
             </div>
             <div class="btn">
               <div class="inner"></div>
-              <button type="submit">войти</button>
+              <button type="submit">Loge In</button>
             </div>
             <div class="signup-link">
-              Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
+              Don't have an account? <Link to="/register">Sign Up</Link>
             </div>
           </form>
 
-          {/*  end of the form */}
         </div>
-        {/* </div> */}
       </div>
     </>
   );

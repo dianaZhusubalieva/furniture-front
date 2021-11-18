@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardActions, CardContent, CardMedia, Tooltip, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import '../UserContent/Bayel.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -41,7 +41,7 @@ const UserCards = ({ item }) => {
                 </Button>
 
                 <Link to={`/product/${item.id}`} >
-                    <Button variant="outlined" className='card-btn'>Подробнее</Button>
+                    <Button variant="outlined" className='card-btn'>Learn More</Button>
                 </Link>
             </CardActions>
         </Card>

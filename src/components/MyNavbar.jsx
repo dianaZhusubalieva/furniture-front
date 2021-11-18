@@ -25,7 +25,6 @@ import { ShoppingCart } from "@mui/icons-material";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 import { useAuth } from "../contexts/AuthContext";
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 
 import Favorites from "./UserContent/Favorites";
 const Search = styled("div")(({ theme }) => ({
@@ -144,7 +143,7 @@ export default function PrimarySearchAppBar() {
         ) : (
           <Link to="/register">
             <Button >
-              Войти
+              Loge In
               <AccountCircle
                 style={{ color: "rgba(169, 169, 169, 0.748)" }}
               />
@@ -183,7 +182,7 @@ export default function PrimarySearchAppBar() {
             </Badge>
           </Link>
         </IconButton>
-        <p>Корзина</p>
+        <p>Cart</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -200,7 +199,7 @@ export default function PrimarySearchAppBar() {
             />
           </Badge>
         </IconButton>
-        <p>Избранное</p>
+        <p>Favorites</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -212,7 +211,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Профиль</p>
+        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
@@ -222,15 +221,7 @@ export default function PrimarySearchAppBar() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed">
           <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              style={{ color: "rgba(102, 102, 102, 0.644)" }}
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
+
 
             <h2
               className="main-logo"

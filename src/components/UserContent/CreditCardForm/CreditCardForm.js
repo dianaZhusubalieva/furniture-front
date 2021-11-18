@@ -57,7 +57,7 @@ const CreditCardForm = (props) => {
         className={closeBtn ? "creditCardForm activeForm" : "creditCardForm"}
       >
         <div className="field-form">
-          <label>номер карты</label>
+          <label>Card number</label>
           <div className="field-form-numCard">
             <input
               required
@@ -101,7 +101,7 @@ const CreditCardForm = (props) => {
           </div>
         </div>
         <div className="field-form">
-          <label>ID карты</label>
+          <label>card ID</label>
           <input
             required
             ref={nameCardRef}
@@ -115,7 +115,7 @@ const CreditCardForm = (props) => {
           <div className="field-form">
             <label>Expiration date</label>
             <select required ref={monthCardRef} onChange={handleChange} type="number">
-              <option value="мес">мес</option>
+              <option value="мес">month</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -158,7 +158,7 @@ const CreditCardForm = (props) => {
           <button
             type="submit"
             className="btnSubmit" type="submit">
-            подтвердить
+            Submit
           </button>
 
         </div>

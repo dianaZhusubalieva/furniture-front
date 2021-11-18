@@ -17,11 +17,7 @@ export default function Registerpage() {
   return (
     <>
       <div className="bodyRegister">
-        {/* <div class="center"> */}
-        {/* <input type="checkbox" id="show" /> */}
-        {/* <label for="show" class="show-btn">
-            View Form
-          </label> */}
+
         <div class="containerDi">
 
           <Link to="/">
@@ -31,27 +27,20 @@ export default function Registerpage() {
               title="close"
             ></label>
           </Link>
-          <div class="text">Sign up Form</div>
+          <div class="text">Sign Up </div>
 
 
-          {/* form///// */}
           <form
             onSubmit={async (e) => {
               e.preventDefault();
 
               if (!email || !password) {
-                // Toastify({
-                //   text: "This is a toast",
-                //   className: "error",
-                //   style: {
-                //     background: "linear-gradient(to right, #00b09b, #96c93d)",
-                //   },
-                // }).showToast();
+
               }
               setIsSubmitting(true);
               register(email, password)
                 .then((response) => {
-                  navigate(-1);
+                  navigate('/');
                 })
                 .catch((error) => {
                   console.log(error.message);
@@ -70,7 +59,7 @@ export default function Registerpage() {
           // action="#"
           >
             <div class="data">
-              <label>Ваш email</label>
+              <label>Email</label>
               <input
                 // value="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -80,7 +69,7 @@ export default function Registerpage() {
               />
             </div>
             <div class="data">
-              <label>Введите пароль</label>
+              <label>Write your password</label>
               <input
                 // value="password"
                 onChange={(e) => setPassword(e.target.value)}
@@ -96,7 +85,7 @@ export default function Registerpage() {
             </div>
             <div class="btn">
               <div class="inner"></div>
-              <button type="submit">зарегистрироваться</button>
+              <button type="submit">sign up</button>
             </div>
             {/* google sign in  */}
             <div class="btn">
@@ -117,18 +106,16 @@ export default function Registerpage() {
                   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                   alt=""
                 />
-                <span className="span1">Войдите с помощью Google аккаунта</span>
+                <span className="span1">Loge In with Google</span>
               </button>
             </div>
 
             <div class="signup-link">
-              уже зарегистрированы? <Link to="/login">Войти</Link>
+              Already a member? <Link to="/login">Loge In</Link>
             </div>
           </form>
 
-          {/*  end of the form */}
         </div>
-        {/* </div> */}
       </div>
     </>
   );

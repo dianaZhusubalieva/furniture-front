@@ -31,7 +31,7 @@ const Favorites = ({ open, handleClose }) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography style={{ textAlign: 'center' }} id="modal-modal-title" variant="h6" component="h2"> Избранное
+                    <Typography style={{ textAlign: 'center' }} id="modal-modal-title" variant="h6" component="h2"> Favorites
                         {
                             favorites ? (
                                 favorites.favorites.length > 0 ? (
@@ -58,7 +58,7 @@ const Favorites = ({ open, handleClose }) => {
 
                                     ))
                                 ) : (
-                                    <h3>У вас нет избранных товаров </h3>
+                                    <h3>Favorites is empty </h3>
                                 )
                             ) : (
                                 <h3>Loading...</h3>
