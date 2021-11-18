@@ -22,7 +22,7 @@ const UserCards = ({ item }) => {
                 <p className='card-title' >
                     {item.name}
                 </p>
-                <Typography title={item.description} variant="body2" color="text.secondary">
+                <Typography component={'span'} title={item.description} variant="body2" color="text.secondary">
                     <p> {item.description.slice(0, 60)}...</p>
                 </Typography>
 
