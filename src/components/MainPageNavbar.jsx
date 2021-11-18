@@ -4,15 +4,11 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { ShoppingCart } from "@mui/icons-material";
 import { clientContext } from "../contexts/ClientContext";
@@ -20,6 +16,10 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { Button } from "@mui/material";
 import IMG from "../helpers/images/logout.png";
+
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import Favorites from "./UserContent/Favorites";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -64,11 +64,14 @@ export default function PrimarySearchAppBar() {
   const { currentUser, logout, adminEmail } = useAuth();
 
   // ! cart
-  const { productsCountInCart } = React.useContext(clientContext);
+  const { productsCountInCart, productsCountInFavorites, getFavorite } = React.useContext(clientContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  //  ! favorites
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -106,8 +109,24 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {
+        currentUser ? (
+          <>
+            <Button onClick={logout}>
+              <h6 className="text3">{currentUser.email}</h6>
+              <img src={IMG} alt="" />
+            </Button>
+          </>
+        ) : (
+          <Link to="/register">
+            <Button >
+              Loge In
+              <AccountCircle
+                style={{ color: "rgba(169, 169, 169, 0.748)" }}
+              />
+            </Button>
+          </Link>
+        )}
     </Menu>
   );
 
@@ -140,7 +159,7 @@ export default function PrimarySearchAppBar() {
             </Badge>
           </Link>
         </IconButton>
-        <p>Корзина</p>
+        <p>Cart</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -148,11 +167,16 @@ export default function PrimarySearchAppBar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+          <Badge badgeContent={productsCountInFavorites} color="error">
+            <BookmarkBorderIcon
+              onClick={() => {
+                handleOpen();
+                getFavorite();
+              }}
+            />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Favorites</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -170,90 +194,94 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            style={{ color: "rgba(102, 102, 102, 0.644)" }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <h2 className="main-logo">Industry West</h2>
-          {currentUser ? (
-            currentUser.email === adminEmail ? (
-              <Link to="/admin">
-                <Button>Admin</Button>
-              </Link>
+    <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="fixed">
+          <Toolbar>
+
+            <h2 className="main-logo">Industry West</h2>
+            {currentUser ? (
+              currentUser.email === adminEmail ? (
+                <Link to="/admin">
+                  <Button>Admin</Button>
+                </Link>
+              ) : (
+                <p></p>
+              )
             ) : (
               <p></p>
-            )
-          ) : (
-            <p></p>
-          )}
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Link to="/cart">
-                <Badge
-                  style={{ color: "rgba(102, 102, 102, 0.644)" }}
-                  badgeContent={productsCountInCart}
-                  color="error"
-                >
-                  <ShoppingCart />
-                </Badge>
-              </Link>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              style={{ color: "rgba(102, 102, 102, 0.644)" }}
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            {currentUser ? (
-              <>
-                <Button onClick={logout}>
-                  <h6 className="text3">{currentUser.email}</h6>
-                  <img src={IMG} alt="" />
-                </Button>
-              </>
-            ) : (
-              <Link to="/register">
-                <Button style={{ marginTop: "7px" }}>
-                  <AccountCircle
-                    style={{ color: "rgba(102, 102, 102, 0.644)" }}
-                  />
-                </Button>
-              </Link>
             )}
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+              >
+                <Link to="/cart">
+                  <Badge
+                    style={{ color: "rgba(102, 102, 102, 0.644)" }}
+                    badgeContent={productsCountInCart}
+                    color="error"
+                  >
+                    <ShoppingCart />
+                  </Badge>
+                </Link>
+              </IconButton>
+              <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                style={{ color: "rgba(102, 102, 102, 0.644)" }}
+              >
+                <Badge badgeContent={productsCountInFavorites} color="error">
+                  <BookmarkBorderIcon
+                    onClick={() => {
+                      handleOpen();
+                      getFavorite();
+                    }}
+                  />
+                </Badge>
+              </IconButton>
+              {currentUser ? (
+                <>
+                  <Button onClick={logout}>
+                    <h6 className="text3">{currentUser.email}</h6>
+                    <img src={IMG} alt="" />
+                  </Button>
+                </>
+              ) : (
+                <Link to="/register">
+                  <Button style={{ marginTop: "7px" }}>
+                    <AccountCircle
+                      style={{ color: "rgba(102, 102, 102, 0.644)" }}
+                    />
+                  </Button>
+                </Link>
+              )}
+            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        {renderMobileMenu}
+        {renderMenu}
+      </Box>
+      <Favorites
+        open={open}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
+      />
+    </>
   );
 }
 

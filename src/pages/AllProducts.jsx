@@ -38,7 +38,7 @@ const AllProducts = () => {
         {/*  */}
         <div className='radio-content' >
           <FormControl className="radio-btn" component="fieldset">
-            <FormLabel component="legend">Тип</FormLabel>
+            <FormLabel component="legend">Type of Furniture</FormLabel>
             <RadioGroup
               onChange={(e) => filterProducts("type", e.target.value)}
               row
@@ -48,18 +48,18 @@ const AllProducts = () => {
               <FormControlLabel
                 value="диван"
                 control={<Radio />}
-                label="Диваны"
+                label="Sofas"
               />
               <FormControlLabel
                 value="кресло"
                 control={<Radio />}
-                label="Кресла"
+                label="Arm Chairs"
               />
-              <FormControlLabel value="стол" control={<Radio />} label="Столы" />
+              <FormControlLabel value="стол" control={<Radio />} label="Tables" />
               <FormControlLabel
                 value="кровать"
                 control={<Radio />}
-                label="Кровати"
+                label="Beds"
               />
             </RadioGroup>
           </FormControl>

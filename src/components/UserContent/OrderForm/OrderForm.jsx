@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './orderForm.css'
 import { useNavigate } from 'react-router';
 import { Button } from '@mui/material'
@@ -13,27 +12,27 @@ const OrderForm = () => {
                 navigate('/pay')
             }} className='order-form' action="#" >
 
-                <h1>Адресс доставки</h1>
+                <h1>Deleviery address</h1>
 
                 <section>
-                    <label for="name">Ваше имя</label>
+                    <label for="name">Your name</label>
                     <input required id="name" name="name" autocomplete="name" maxlength="100" pattern="[\p{L} \-\.]+" />
                 </section>
 
 
                 <section>
-                    <label for="address-line1">Адресс</label>
+                    <label for="address-line1">Address</label>
                     <input required autocomplete="address-line1" id="address-line1" name="address-line1" />
                 </section>
 
 
                 <section>
-                    <label for="postal-code">ZIP или почтовый индекс</label>
+                    <label for="postal-code">ZIP or postal code</label>
                     <input required id="postal-code" name="postal-code" autocomplete="postal-code" maxlength="20" />
                 </section>
 
                 <section required id="country-region">
-                    <label for="country">Страна или регион</label>
+                    <label for="country">Country or Region</label>
                     <select id="country" name="country" autocomplete="country" enterkeyhint="done" required>
                         <option selected value="SPACER"> </option>
                         <option value="AF">Afghanistan</option>
@@ -289,15 +288,15 @@ const OrderForm = () => {
                 </section>
 
                 <section>
-                    <label for="tel">Телефон</label>
+                    <label for="tel">Phone number</label>
                     <input id="tel" name="tel" autocomplete="tel" type="tel" maxlength="30" pattern="[\d \-\+]+" required />
                 </section>
 
-                <button type='submit' id="save-address">Оплатить сейчас</button>
+                <button type='submit' id="save-address">Buy now</button>
 
                 <Button id='order-cancel-btn' onClick={() => {
                     navigate('/products')
-                }} >Отменить</Button>
+                }} >Cancel</Button>
 
 
             </form>

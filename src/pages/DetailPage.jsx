@@ -3,7 +3,6 @@ import { useParams } from 'react-router';
 import { clientContext } from '../contexts/ClientContext';
 import MyNavbar from "../components/MyNavbar";
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom'
 
 // snack
 import Stack from '@mui/material/Stack';
@@ -78,27 +77,27 @@ const DetailPage = () => {
             <Stack spacing={2} sx={{ width: '100%' }}>
                 <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        Добавлено в корзину
+                        Added to cart
                     </Alert>
                 </Snackbar>
             </Stack>
 
             <Stack spacing={2} sx={{ width: '100%' }}>
                 <Snackbar open={open1} autoHideDuration={2000} onClose={handleClose1}>
-                    <Alert severity="error">Удалено из корзины</Alert>
+                    <Alert severity="error">Deleted from cart</Alert>
                 </Snackbar>
             </Stack>
             <Stack spacing={2} sx={{ width: '100%' }}>
                 <Snackbar open={open3} autoHideDuration={2000} onClose={handleClose3}>
                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        Добавлено в избранное
+                        Added to favorites
                     </Alert>
                 </Snackbar>
             </Stack>
 
             <Stack spacing={2} sx={{ width: '100%' }}>
                 <Snackbar open={open4} autoHideDuration={2000} onClose={handleClose4}>
-                    <Alert severity="error">Удалено из избранных</Alert>
+                    <Alert severity="error">Deleted from favorites</Alert>
                 </Snackbar>
             </Stack>
             <MyNavbar />
@@ -116,8 +115,8 @@ const DetailPage = () => {
                                     <h2>{detailProduct.name}</h2>
                                     <span>${detailProduct.price}</span>
                                 </div>
-                                <p><strong>Модель : </strong>{detailProduct.model}</p>
-                                <p><strong>Описание : </strong>{detailProduct.description}</p>
+                                <p><strong>Model : </strong>{detailProduct.model}</p>
+                                <p><strong>Description : </strong>{detailProduct.description}</p>
 
                                 {
                                     checkProductInCart(detailProduct.id) ? (
@@ -127,7 +126,7 @@ const DetailPage = () => {
                                                 handleClick1()
                                             }}
                                             className='shop-btn' color='error' variant='outlined' size="large">
-                                            Удалить из корзины
+                                            Delete from cart
                                         </Button>
 
                                     ) : (
@@ -137,7 +136,7 @@ const DetailPage = () => {
                                                 handleClick()
                                             }}
                                             className='shop-btn' color='success' variant='outlined' size="large">
-                                            Добавить в корзину
+                                            Add to cart
                                         </Button>
                                     )
                                 }
@@ -150,7 +149,7 @@ const DetailPage = () => {
 
                                             }}
                                             className='shop-btn' color='error' variant='outlined' size="large">
-                                            Удалить из избранных
+                                            Delete from favorites
                                         </Button>
 
                                     ) : (
@@ -161,7 +160,7 @@ const DetailPage = () => {
 
                                             }}
                                             className='shop-btn' color='success' variant='outlined' size="large">
-                                            Добавить в избранное
+                                            Add to favorites
                                         </Button>
                                     )
                                 }

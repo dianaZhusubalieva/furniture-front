@@ -132,21 +132,26 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {currentUser ? (
-        <>
-          <Button onClick={logout}>
-            <h6 className="text3">{currentUser.email}</h6>
-            <img src={IMG} alt="" />
-          </Button>
-        </>
-      ) : (
-        <Link to="/register">
-          <Button>
-            Войти
-            <AccountCircle style={{ color: "rgba(169, 169, 169, 0.748)" }} />
-          </Button>
-        </Link>
-      )}
+
+      {
+        currentUser ? (
+          <>
+            <Button onClick={logout}>
+              <h6 className="text3">{currentUser.email}</h6>
+              <img src={IMG} alt="" />
+            </Button>
+          </>
+        ) : (
+          <Link to="/register">
+            <Button >
+              Loge In
+              <AccountCircle
+                style={{ color: "rgba(169, 169, 169, 0.748)" }}
+              />
+            </Button>
+          </Link>
+        )}
+
     </Menu>
   );
 
@@ -179,7 +184,7 @@ export default function PrimarySearchAppBar() {
             </Badge>
           </Link>
         </IconButton>
-        <p>Корзина</p>
+        <p>Cart</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -196,7 +201,7 @@ export default function PrimarySearchAppBar() {
             />
           </Badge>
         </IconButton>
-        <p>Избранное</p>
+        <p>Favorites</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -208,7 +213,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Профиль</p>
+        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
@@ -218,15 +223,7 @@ export default function PrimarySearchAppBar() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed">
           <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              style={{ color: "rgba(102, 102, 102, 0.644)" }}
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
+
 
             <h2
               className="main-logo"
