@@ -30,7 +30,7 @@
 
 .css-r40f8v-MuiTypography-root {
     text-align: center;
-    color: #000!important;
+    color: #000 !important;
 }
 
 .css-1t6e9jv-MuiCardActions-root {
@@ -268,11 +268,9 @@
 /* content 4 */
 
 .del-m {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-color: #EFEFEF;
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .del-m h2 {
@@ -314,27 +312,35 @@
     .tr-succ h1 {
         font-size: 25px;
     }
+
     .tr-succ img {
         padding-left: 140px;
     }
+
     .tr-succ button {
         margin-left: 70px;
     }
+
     .tr-succ h4 {
         margin-left: 110px;
     }
+
+    .css-1wnsr1i {}
 }
 
 @media screen and (max-width: 370px) {
     .tr-succ h1 {
         font-size: 20px;
     }
+
     .tr-succ img {
         padding-left: 100px;
     }
+
     .tr-succ button {
         margin-left: 40px;
     }
+
     .tr-succ h4 {
         margin-left: 70px;
     }
