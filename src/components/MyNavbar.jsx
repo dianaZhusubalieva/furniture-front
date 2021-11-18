@@ -42,7 +42,7 @@ const Search = styled("div")(({ theme }) => ({
     width: "auto",
   },
 }));
-
+//! Proverka
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
@@ -132,6 +132,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
+
       {
         currentUser ? (
           <>
@@ -150,6 +151,7 @@ export default function PrimarySearchAppBar() {
             </Button>
           </Link>
         )}
+
     </Menu>
   );
 
@@ -254,12 +256,8 @@ export default function PrimarySearchAppBar() {
                 <Link to="/admin">
                   <Button>Admin</Button>
                 </Link>
-              ) : (
-                null
-              )
-            ) : (
-              null
-            )}
+              ) : null
+            ) : null}
             <Box sx={{ flexGrow: 1 }} />
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -294,14 +292,12 @@ export default function PrimarySearchAppBar() {
               </IconButton>
               <IconButton
                 size="large"
-
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
                 style={{ color: "rgba(102, 102, 102, 0.644)" }}
-
               >
                 {currentUser ? (
                   <>
