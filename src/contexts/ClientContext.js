@@ -217,6 +217,7 @@ const ClientContextProvider = (props) => {
       payload: favorite,
     });
   };
+  // Clear count of cart
   const clearCountOfCart = () => {
     dispatch({
       type: "CLEAR_COUNT_OF_CART",
