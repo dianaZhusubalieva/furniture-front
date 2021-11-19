@@ -291,7 +291,7 @@
 }
 
 .del-block {
-    flex-wrap: wrap;
+
     display: flex;
     justify-content: space-evenly;
 }
@@ -301,6 +301,11 @@
 }
 
 /*  */
+@media screen and (max-width: 1024px) {
+    .del-block {
+        flex-wrap: wrap;
+    }
+}
 
 @media screen and (max-width: 515px) {
     .order-btn {
