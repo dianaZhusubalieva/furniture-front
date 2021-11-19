@@ -105,12 +105,12 @@ export default function Registerpage() {
                   src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                   alt=""
                 />
-                <span className="span1">Loge In with Google</span>
+                <span className="span1">Login with Google</span>
               </button>
             </div>
 
             <div className="signup-link">
-              Already a member? <Link to="/login">Loge In</Link>
+              Already a member? <Link to="/login">Login</Link>
             </div>
           </form>
 
