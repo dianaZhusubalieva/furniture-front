@@ -85,8 +85,8 @@ const MyFooter = () => {
         <div className="footerCopy">
           <div className="inb">
             <p>
-              Copyrights<sup>&copy;</sup> 2021 Makers. Developed with{" "}
-              <img style={{ width: '20px' }} src="https://cdn-icons-png.flaticon.com/512/1077/1077086.png" alt="" />
+              Copyrights<sup>&copy;</sup> 2021 Makers.{" "}
+
             </p>
           </div>
         </div>

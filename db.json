@@ -1,0 +1,410 @@
+{
+  "furnitures": [
+    {
+      "name": "Loveseat",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/Connect2-SeaterSofa_52fb0b3d-1318-4c6f-8d18-aae95aba686e_420x420.progressive.jpg?v=1614221049",
+      "price": 63000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 174587857
+    },
+    {
+      "name": "Tufted",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/gus-mix-modular-sofa-2-pc_420x420.progressive.jpg?v=1622446723",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 147837
+    },
+    {
+      "name": "Lorreta",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/1919352_420x420.progressive.jpg?v=1578032878",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 1793
+    },
+    {
+      "name": "Kropine",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/12244492_420x420.progressive.jpg?v=1578636750",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 10954
+    },
+    {
+      "name": "Loveseat",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/16967785_420x420.progressive.jpg?v=1612767341",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 163864
+    },
+    {
+      "name": "Lorreta",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/gus-rialto-sofa-bed_420x420.progressive.jpg?v=1621232026",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 183748
+    },
+    {
+      "name": "Tufted",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/669748_420x420.progressive.jpg?v=1578558682",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 1588574
+    },
+    {
+      "name": "Loveseat",
+      "description": "cool sofa for quest room",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/gus-margot-sofa_420x420.progressive.jpg?v=1622451985",
+      "price": 60000,
+      "color": "grey",
+      "model": "Premium ss4",
+      "type": "диван",
+      "id": 102903
+    },
+    {
+      "name": "Bernhardt",
+      "description": "The Highland Park collection, part of Bernhardt’s eclectic Loft brand, blends the best features of farmhouse and mid-century design, with a one-of-a kind appeal and laid-back vibe.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/f2430f8f18c792b0b0f81685e1b829d6_474dcee4-c7ba-44e7-80d7-f1ea2e0085e8_420x420.progressive.jpg?v=1587704652",
+      "price": 12000,
+      "color": "белый",
+      "model": "gigh class",
+      "type": "кресло",
+      "id": 12342444234233
+    },
+    {
+      "name": "Grabieta",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/50519_420x420.progressive.jpg?v=1598854598",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 12334244234233
+    },
+    {
+      "name": "Grabieta",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "type": "кресло",
+      "id": 12334244234233
+    },
+    {
+      "name": "Grabieta",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/29166475_420x420.progressive.jpg?v=1567076253",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 12342444783234232
+    },
+    {
+      "name": "Blu Dot",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/9832314_258194e4-d2ba-4194-bf72-e81129da7ec4_420x420.progressive.jpg?v=1597826574",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 123424233
+    },
+    {
+      "name": "pink sky",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/12244504_420x420.progressive.jpg?v=1578630464",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 12342442233
+    },
+    {
+      "name": "pink sky",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/Allison_Chair_with_X_Base_420x420.progressive.jpg?v=1597826354",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 14244234233
+    },
+    {
+      "name": "pink sky",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/9831893_fabric-color.berry-red-wool-h-680-br_420x420.progressive.jpg?v=1597817959",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 12342442342
+    },
+    {
+      "name": "Brimingem",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/9831781_420x420.progressive.jpg?v=1597738447",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 123424433
+    },
+    {
+      "name": "Grabieta",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/19381531_420x420.progressive.jpg?v=1584087343",
+      "price": 14000,
+      "color": "pink",
+      "model": "Diabla",
+      "type": "кресло",
+      "id": 1244234233
+    },
+    {
+      "name": "Circula",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/27779899_420x420.progressive.jpg?v=1597624463",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 3424233
+    },
+    {
+      "name": "Brimingem",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/f2430f8f18c792b0b0f81685e1b829d6_b3ca8fdc-25ea-406d-9815-9db2b26f4db7_420x420.progressive.jpg?v=1605583075",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 1223424233
+    },
+    {
+      "name": "table view",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/27779899_table-base-top-color-chrome---primavera-marble_420x420.progressive.jpg?v=1609430436",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 1234224233
+    },
+    {
+      "name": "Minimalista",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/28902689_420x420.progressive.jpg?v=1596178996",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 1234242233
+    },
+    {
+      "name": "Brimingem",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/28902689_420x420.progressive.jpg?v=1596178996",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 1234242332
+    },
+    {
+      "name": "Grinada",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/rs-barcelona-plec-marble-table_420x420.progressive.jpg?v=1622543956",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 12342423322
+    },
+    {
+      "name": "Circula",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/31312601_420x420.progressive.jpg?v=1610190619",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 12223424233
+    },
+    {
+      "name": "Algerige",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/28902689_420x420.progressive.jpg?v=1596178996",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 123424223233
+    },
+    {
+      "name": "Circula",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/10583535_384c732f-1c1a-4301-8b28-11fcf8819c18_420x420.progressive.jpg?v=1598666537",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 12342423343
+    },
+    {
+      "name": "Leprene",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/rs-barcelona-plec-marble-table_420x420.progressive.jpg?v=1622543956  ",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 123424233123
+    },
+    {
+      "name": "Ocean view",
+      "description": "With its pop look and spirit, Lipstick is a collection with a very fun, cheerful personality",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/27779899_420x420.progressive.jpg?v=1597624463",
+      "price": 9000,
+      "color": "black",
+      "model": "Diabla",
+      "type": "стол",
+      "id": 123424256733
+    },
+    {
+      "name": "Priage",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/f2430f8f18c792b0b0f81685e1b829d6_7ccb931d-ff41-4e2f-a0fd-56efcf4869b1_420x420.progressive.jpg?v=1598517166",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 123877424233
+    },
+    {
+      "name": "Everblue",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/spindle-bed_420x420.progressive.jpg?v=1614331032",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 12342476233
+    },
+    {
+      "name": "Priage",
+      "description": "Bring a stylish anchor piece to your master suite or guest bedroom with the Modern Bed from Caracole.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/37410172_420x420.progressive.jpg?v=1603072450",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 123424236453
+    },
+    {
+      "name": "Calligaris",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/8168603_420x420.progressive.jpg?v=1610352051",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 6454
+    },
+    {
+      "name": "London",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/31468688_420x420.progressive.jpg?v=1605769625",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 63464
+    },
+    {
+      "name": "Brimingem",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/37410185_420x420.progressive.jpg?v=1603072715",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 765434
+    },
+    {
+      "name": "Calligaris",
+      "description": "Bring a stylish anchor piece to your master suite or guest bedroom with the Modern Bed from Caracole.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/f2430f8f18c792b0b0f81685e1b829d6_6644fca0-b724-4bf5-98ec-70109a123762_420x420.progressive.jpg?v=1598517166",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 543554
+    },
+    {
+      "name": "Zinus",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/f2430f8f18c792b0b0f81685e1b829d6_6644fca0-b724-4bf5-98ec-70109a123762_420x420.progressive.jpg?v=1598517166",
+      "price": 9000,
+      "color": "white",
+      "model": "Calligaris",
+      "type": "кровать",
+      "id": 765465
+    },
+    {
+      "name": "Brimingem",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/37410166_420x420.progressive.jpg?v=1603073202",
+      "price": 9000,
+      "color": "white",
+      "model": "Pianca",
+      "type": "кровать",
+      "id": 4654346
+    },
+    {
+      "name": "Regatta",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/35550293_420x420.progressive.jpg?v=1594452651",
+      "price": 9500,
+      "color": "white",
+      "model": "Pianca",
+      "type": "кровать",
+      "id": 534654
+    },
+    {
+      "name": "Pianca",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/8168603_420x420.progressive.jpg?v=1610352051",
+      "price": 9000,
+      "color": "white",
+      "model": "Pianca",
+      "type": "кровать",
+      "id": 546534653
+    },
+    {
+      "name": "Pianca",
+      "description": "The design option for the headboard is high with a double trapezoidal panel for the Rialto Diritto model.",
+      "image": "https://cdn.shopify.com/s/files/1/0265/0083/products/f2430f8f18c792b0b0f81685e1b829d6_7ccb931d-ff41-4e2f-a0fd-56efcf4869b1_420x420.progressive.jpg?v=1598517166",
+      "price": 9000,
+      "color": "white",
+      "model": "Pianca",
+      "type": "кровать",
+      "id": 654465464
+    }
+  ]
+}

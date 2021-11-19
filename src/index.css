@@ -210,6 +210,18 @@ code {
   color: white
 }
 
+.our-prod {
+  font-family: ' Arapey', serif;
+  color: #696969;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.our-prod:hover {
+  color: #848482;
+  transition-duration: .5s;
+}
+
 @media screen and (max-width: 370px) {
   .c1-text {
     width: unset;

@@ -194,7 +194,10 @@ export default function PrimarySearchAppBar() {
         <AppBar position="fixed">
           <Toolbar>
 
-            <h2 className="main-logo">Industry West</h2>
+            <h2 style={{ cursor: 'pointer' }} className="main-logo">Industry West</h2>
+            <Link to='/products' >
+              <h3 style={{ marginLeft: '50px' }} className="our-prod" >Our Products</h3>
+            </Link>
             {currentUser ? (
               currentUser.email === adminEmail ? (
                 <Link to="/admin">
